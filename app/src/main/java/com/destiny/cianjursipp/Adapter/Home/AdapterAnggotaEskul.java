@@ -22,14 +22,14 @@ import com.destiny.cianjursipp.SharedPreferance.DB_Helper;
 import java.util.List;
 
 public class AdapterAnggotaEskul extends RecyclerView.Adapter<AdapterAnggotaEskul.HolderData> {
-    private List<Anggota> mList;
+    private List<DataModel> mList;
     private Context ctx;
 
     DB_Helper dbHelper;
     Boolean onClick=false;
     RecyclerView recyclerView;
     Destiny destiny;
-    public AdapterAnggotaEskul (Context ctx, List<Anggota> mList){
+    public AdapterAnggotaEskul (Context ctx, List<DataModel> mList){
         this.ctx = ctx;
         this.mList = mList;
     }
@@ -45,8 +45,7 @@ public class AdapterAnggotaEskul extends RecyclerView.Adapter<AdapterAnggotaEsku
     @Override
     public void onBindViewHolder(@NonNull final HolderData holderData, int posistion) {
         destiny = new Destiny();
-        final Anggota dm = mList.get(posistion);
-        Toast.makeText(ctx,String.valueOf(mList.size()), Toast.LENGTH_SHORT).show();
+        final DataModel dm = mList.get(posistion);
         if (mList.size() > 0){
             holderData.No.setText(String.valueOf(posistion+1));
             holderData.Nama.setText(dm.getNama_siswa());

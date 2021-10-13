@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cianjur SIPP</string>
+    <string name="app_name">Cianjur Sipp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="periode_tugas">Periode Tugas Belum Dimulai atau Sudah Selesai</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -19,7 +19,7 @@
     <string name="evadir">Pada menu ini, orang tua maupun siswa dapat memberikan penilaian terkait evaluasi pelayanan dan fasilitas di sekolah. Kirimkan kritik dan saran yang bersifat membangun ya agar bisa diperbaiki lebih baik lagi !</string>
     <string name="title_activity_maps">Map</string>
     <string name="default_ad">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="belajar_ad">ca-app-pub-3874394648867984~3050126285</string>
+    <string name="belajar_ad">ca-app-pub-2167245957396419~1416190380</string>
     <string name="destiny_ad">ca-app-pub-1910572986729903~9052836972</string>
     <string-array name="Izin">
         <item>Sakit Istirahat Dirumah</item>

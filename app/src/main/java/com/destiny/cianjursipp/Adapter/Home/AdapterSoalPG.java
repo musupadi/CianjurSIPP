@@ -1,6 +1,7 @@
 package com.destiny.cianjursipp.Adapter.Home;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.destiny.cianjursipp.Method.Destiny;
 import com.destiny.cianjursipp.R;
+import com.destiny.cianjursipp.SharedPreferance.DB_Helper;
 
 import java.util.ArrayList;
 
@@ -22,6 +24,8 @@ public class AdapterSoalPG extends RecyclerView.Adapter<AdapterSoalPG.HolderData
     Destiny destiny;
     int Soal;
     ArrayList<String> JAWABAN = new ArrayList<String>();
+    DB_Helper dbHelper;
+    String Nomor,Jawaban;
     public AdapterSoalPG(Context ctx,int Soal,ArrayList<String> JAWABAN){
         this.ctx = ctx;
         this.Soal = Soal;
@@ -40,49 +44,117 @@ public class AdapterSoalPG extends RecyclerView.Adapter<AdapterSoalPG.HolderData
     public void onBindViewHolder(@NonNull final HolderData holderData, final int posistion) {
         destiny = new Destiny();
         int POSITION = posistion+1;
+        dbHelper = new DB_Helper(ctx);
+        Cursor cursor = dbHelper.checkTugas(String.valueOf(POSITION));
+        if (cursor.getCount()>0){
+            while (cursor.moveToNext()){
+                Nomor = cursor.getString(0);
+                Jawaban = cursor.getString(1);
+            }
+        }
         holderData.Nomor.setText("Soal Nomor : "+POSITION);
-        JAWABAN.add("");
-        if (JAWABAN.size()>Soal){
-            JAWABAN.remove(posistion);
+        try {
+            if (Jawaban!=null){
+                JAWABAN.add(Jawaban);
+                if (JAWABAN.size()>Soal){
+                    JAWABAN.remove(posistion);
+                }
+                if (JAWABAN.get(posistion).equals("")){
+                    DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
+                }
+                if (Jawaban.equals("a")){
+                    DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
+                    Clicked(holderData.A,"a",posistion);
+                    try {
+                        dbHelper.SaveJawaban(String.valueOf(POSITION),"a");
+                    }catch (Exception e){
+                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"a");
+                    }
+                }else if (Jawaban.equals("b")){
+                    DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
+                    Clicked(holderData.B,"b",posistion);
+                    try {
+                        dbHelper.SaveJawaban(String.valueOf(POSITION),"b");
+                    }catch (Exception e){
+                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"b");
+                    }
+                }else if (Jawaban.equals("c")){
+                    DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
+                    Clicked(holderData.C,"c",posistion);
+                    try {
+                        dbHelper.SaveJawaban(String.valueOf(POSITION),"c");
+                    }catch (Exception e){
+                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"c");
+                    }
+                }else if (Jawaban.equals("d")){
+                    DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
+                    Clicked(holderData.D,"d",posistion);
+                    try {
+                        dbHelper.SaveJawaban(String.valueOf(POSITION),"d");
+                    }catch (Exception e){
+                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"d");
+                    }
+                }else if (Jawaban.equals("e")){
+                    DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
+                    Clicked(holderData.E,"e",posistion);
+                    try {
+                        dbHelper.SaveJawaban(String.valueOf(POSITION),"e");
+                    }catch (Exception e){
+                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"e");
+                    }
+                }
+            }else{
+                JAWABAN.add("");
+                if (JAWABAN.size()>Soal){
+                    JAWABAN.remove(posistion);
+                }
+                if (JAWABAN.get(posistion).equals("")){
+                    DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
+                }
+                holderData.A.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
+                        Clicked(holderData.A,"a",posistion);
+                        dbHelper.SaveJawaban(String.valueOf(POSITION),"a");
+                    }
+                });
+                holderData.B.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
+                        Clicked(holderData.B,"b",posistion);
+                        dbHelper.SaveJawaban(String.valueOf(POSITION),"b");
+                    }
+                });
+                holderData.C.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
+                        Clicked(holderData.C,"c",posistion);
+                        dbHelper.SaveJawaban(String.valueOf(POSITION),"c");
+                    }
+                });
+                holderData.D.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
+                        Clicked(holderData.D,"d",posistion);
+                        dbHelper.SaveJawaban(String.valueOf(POSITION),"d");
+                    }
+                });
+                holderData.E.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
+                        Clicked(holderData.E,"e",posistion);
+                        dbHelper.SaveJawaban(String.valueOf(POSITION),"e");
+                    }
+                });
+            }
+        }catch (Exception e){
+            JAWABAN.add("");
         }
-        if (JAWABAN.get(posistion).equals("")){
-            DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
-        }
-        holderData.A.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
-                Clicked(holderData.A,"a",posistion);
-            }
-        });
-        holderData.B.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
-                Clicked(holderData.B,"b",posistion);
-            }
-        });
-        holderData.C.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
-                Clicked(holderData.C,"c",posistion);
-            }
-        });
-        holderData.D.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
-                Clicked(holderData.D,"d",posistion);
-            }
-        });
-        holderData.E.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
-                Clicked(holderData.E,"e",posistion);
-            }
-        });
     }
 
     @Override

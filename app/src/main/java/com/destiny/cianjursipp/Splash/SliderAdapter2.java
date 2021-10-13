@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -17,10 +18,18 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.destiny.cianjursipp.API.ApiRequest;
+import com.destiny.cianjursipp.API.RetroServer;
 import com.destiny.cianjursipp.Activity.menu.PPDB.FormulirPPDBActivity;
 import com.destiny.cianjursipp.Method.Destiny;
+import com.destiny.cianjursipp.Model.Pena.Marketplace.ResponseMarketplace;
+import com.destiny.cianjursipp.Model.Pena.ResponseModel;
 import com.destiny.cianjursipp.R;
 import com.destiny.cianjursipp.SharedPreferance.DB_Helper;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SliderAdapter2 extends PagerAdapter {
     Context context;
@@ -30,6 +39,7 @@ public class SliderAdapter2 extends PagerAdapter {
     String id_sekolah;
     Dialog dialog;
     Button Submit,Close;
+    EditText Jawaban;
     public SliderAdapter2(Context context,String id_sekolah){
         this.context = context;
         this.id_sekolah = id_sekolah;
@@ -79,14 +89,14 @@ public class SliderAdapter2 extends PagerAdapter {
     public int[] slide_7 ={
             R.drawable.eskul,
             R.drawable.ujian,
-            R.drawable.marketplace,
+            R.drawable.perpustakaan_online,
             R.drawable.koperasi
     };
     public int[] slide_8 ={
             R.drawable.media_pelajaran,
             R.drawable.e_raport,
             R.drawable.gallery,
-            R.drawable.gallery
+            R.drawable.marketplace
     };
     public int[] slide_9 ={
             R.drawable.struktur_organisasi,
@@ -102,7 +112,7 @@ public class SliderAdapter2 extends PagerAdapter {
     public String[] Tslide_1 ={
             "Profil\nSekolah",
             "Jadwal\nPelajaran",
-            "Perpustakaan\nOnline",
+            "Sumber\nPustaka",
             "Pembayaran"
     };
     public String[] Tslide_2 ={
@@ -139,14 +149,14 @@ public class SliderAdapter2 extends PagerAdapter {
     public String[] Tslide_7 ={
             "Ekstrakulikuler",
             "Ujian",
-            "Marketplace",
+            "Perpustakaan\nOnline",
             "Koperasi"
     };
     public String[] Tslide_8 ={
             "Media\nPembelajaran",
             "E-Raport",
-            "Galleri",
-            ""
+            "Gallery",
+            "Marketplace"
     };
     public String[] Tslide_9 ={
             "Struktur\nOrganiasi",
@@ -193,6 +203,7 @@ public class SliderAdapter2 extends PagerAdapter {
         dialog.getWindow().setBackgroundDrawableResource(R.drawable.btn_rounded_white);
         Submit = dialog.findViewById(R.id.btnSubmit);
         Close = dialog.findViewById(R.id.btnClose);
+        Jawaban = dialog.findViewById(R.id.etJawaban);
         if (cursor.getCount()>0){
             while (cursor.moveToNext()){
                 Username = cursor.getString(0);
@@ -331,7 +342,35 @@ public class SliderAdapter2 extends PagerAdapter {
         }
 
         //10
+        Submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ApiRequest api = RetroServer.getClient().create(ApiRequest.class);
+                Call<ResponseModel> Data = api.PostPenelusuranLulusan(destiny.AUTH(Token),Jawaban.getText().toString());
+                Data.enqueue(new Callback<ResponseModel>() {
+                    @Override
+                    public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                        try {
+                            dialog.hide();
+                            Toast.makeText(context, response.body().getStatusMessage(), Toast.LENGTH_SHORT).show();
+                        }catch (Exception e){
+                            Toast.makeText(context, "Pengiriman Data Penlusuran Lulusan Gagal", Toast.LENGTH_SHORT).show();
+                        }
+                    }
 
+                    @Override
+                    public void onFailure(Call<ResponseModel> call, Throwable t) {
+                        Toast.makeText(context, "Pengiriman Data Gagal", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+        Close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.hide();
+            }
+        });
         LOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -339,8 +378,8 @@ public class SliderAdapter2 extends PagerAdapter {
                     destiny.ChangeActivity(context,"Profile Sekolah",Level);
                 }else if (Tslide_1[position].equals("Jadwal\nPelajaran")){
                     destiny.ChangeActivity(context,"Jadwal Pelajaran",Level);
-                }else if (Tslide_1[position].equals("Perpustakaan\nOnline")){
-                    destiny.ChangeActivity(context,"Perpustakaan Online",Level);
+                }else if (Tslide_1[position].equals("Sumber\nPustaka")){
+                    destiny.ChangeActivity(context,"Sumber Pustaka",Level);
                 }else{
                     destiny.ChangeActivity(context,"Pembayaran",Level);
                 }
@@ -425,8 +464,8 @@ public class SliderAdapter2 extends PagerAdapter {
                     destiny.ChangeActivity(context,"Eskul",Level);
                 }else if (Tslide_7[position].equals("Ujian")){
                     destiny.ChangeActivity(context,"Ujian",Level);
-                }else if (Tslide_7[position].equals("Marketplace")){
-                    destiny.ChangeActivity(context,"Marketplace",Level);
+                }else if (Tslide_7[position].equals("Perpustakaan\nOnline")){
+                    destiny.ChangeActivity(context,"Perpustakaan Online",Level);
                 }else{
                     destiny.ChangeActivity(context,"Koperasi",Level);
                 }
@@ -440,10 +479,10 @@ public class SliderAdapter2 extends PagerAdapter {
                     destiny.ChangeActivity(context,"Media Pembelajaran",Level);
                 }else if (Tslide_8[position].equals("E-Raport")){
                     destiny.ChangeActivity(context,"E Raport",Level);
-                }else if (Tslide_8[position].equals("Galleri")){
+                }else if (Tslide_8[position].equals("Gallery")){
                     destiny.ChangeActivity(context,"Gallery",Level);
                 }else{
-                    destiny.ChangeActivity(context,"Koperasi",Level);
+                    destiny.ChangeActivity(context,"Marketplace",Level);
                 }
             }
         });
@@ -456,10 +495,31 @@ public class SliderAdapter2 extends PagerAdapter {
                 }else if (Tslide_9[position].equals("Guru")){
                     destiny.ChangeActivity(context,"Guru",Level);
                 }else if (Tslide_9[position].equals("Penelusuran\nLulusan")){
-                    dialog.show();
-//                    destiny.ChangeActivity(context,"Penelusuran Lulusan",Level);
-                }else{
+                    ApiRequest api = RetroServer.getClient().create(ApiRequest.class);
+                    Call<ResponseModel> Data = api.GetPenelusuranLulusan(destiny.AUTH(Token));
+                    Data.enqueue(new Callback<ResponseModel>() {
+                        @Override
+                        public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                            try {
+                                if (response.body().getStatusCode().equals("000")){
+                                    dialog.show();
+                                }else{
+                                    Toast.makeText(context, response.body().getStatusMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            }catch (Exception e){
+                                Toast.makeText(context, "Tidak Bisa Memuat Data Penelusuran Lusan", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseModel> call, Throwable t) {
+                            Toast.makeText(context, "Tidak Bisa Memuat Data Penelusuran Lulusan", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }else if (Tslide_9[position].equals("Koperasi")){
                     destiny.ChangeActivity(context,"Koperasi",Level);
+                }else{
+                    destiny.ChangeActivity(context,"Marketplace",Level);
                 }
             }
         });

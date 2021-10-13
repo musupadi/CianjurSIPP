@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DB_Helper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "puskomdik.db";
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 6;
     //Account
     public static final String TABLE_NAME_ACCOUNT = "account";
     public static final String COLUMN_USERNAME = "username";
@@ -23,6 +23,12 @@ public class DB_Helper extends SQLiteOpenHelper {
     //Eskul
     public static final String TABLE_NAME_ESKUL = "eskul";
     public static final String COLUMN_ESKUL = "column_eskul";
+    public static final String ID_ESKUL = "id_eskul";
+
+    //Tugas
+    public static final String TABLE_NAME_TUGAS = "tugas";
+    public static final String COLUMN_NOMOR = "nomor";
+    public static final String COLUMN_JAWABAN = "jawaban";
 
     public DB_Helper(Context context){super(
             context,DATABASE_NAME,null,DATABASE_VERSION);
@@ -40,7 +46,12 @@ public class DB_Helper extends SQLiteOpenHelper {
                 COLUMN_ID_KELAS+" TEXT NOT NULL);"
         );
         db.execSQL("CREATE TABLE "+TABLE_NAME_ESKUL+" (" +
-                COLUMN_ESKUL+" TEXT NOT NULL);"
+                COLUMN_ESKUL+" TEXT NOT NULL, "+
+                ID_ESKUL+" TEXT NOT NULL);"
+        );
+        db.execSQL("CREATE TABLE "+TABLE_NAME_TUGAS+" (" +
+                COLUMN_NOMOR+" TEXT NOT NULL, "+
+                COLUMN_JAWABAN+" TEXT NOT NULL);"
         );
     }
 
@@ -48,6 +59,7 @@ public class DB_Helper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_ACCOUNT);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_ESKUL);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_TUGAS);
         this.onCreate(db);
     }
     //Save
@@ -64,11 +76,27 @@ public class DB_Helper extends SQLiteOpenHelper {
         db.insert(TABLE_NAME_ACCOUNT,null,values);
         db.close();
     }
-    public void SaveEskul(String eskul){
+    public void SaveEskul(String eskul,String id){
         SQLiteDatabase db =this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_ESKUL, eskul);
+        values.put(ID_ESKUL, id);
         db.insert(TABLE_NAME_ESKUL,null,values);
+        db.close();
+    }
+    public void SaveJawaban(String nomor,String Jawaban){
+        SQLiteDatabase db =this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NOMOR, nomor);
+        values.put(COLUMN_JAWABAN, Jawaban);
+        db.insert(TABLE_NAME_TUGAS,null,values);
+        db.close();
+    }
+    public void UpdateJawaban(String nomor,String Jawaban){
+        SQLiteDatabase db =this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        String query ="UPDATE FROM "+TABLE_NAME_TUGAS+" WHERE "+COLUMN_NOMOR+" = "+nomor+" SET "+COLUMN_JAWABAN+" = "+Jawaban;
+        db.rawQuery(query,null);
         db.close();
     }
     //CHECKER
@@ -84,6 +112,12 @@ public class DB_Helper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query,null);
         return cursor;
     }
+    public Cursor checkTugas(String nomor){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query ="SELECT * FROM "+TABLE_NAME_TUGAS+" WHERE "+COLUMN_NOMOR+" = "+nomor;
+        Cursor cursor = db.rawQuery(query,null);
+        return cursor;
+    }
     //delete
     public void Logout(){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -92,6 +126,10 @@ public class DB_Helper extends SQLiteOpenHelper {
     public void DeleteEskul(){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM "+TABLE_NAME_ESKUL+"");
+    }
+    public void DeleteTugas(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM "+TABLE_NAME_TUGAS+"");
     }
 }
 

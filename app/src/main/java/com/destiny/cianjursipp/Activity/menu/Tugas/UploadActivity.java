@@ -641,7 +641,7 @@ public class UploadActivity extends AppCompatActivity {
         File mediaFile;
         if (type == MEDIA_TYPE_IMAGE) {
             mediaFile = new File(mediaStorageDir.getPath() + File.separator
-                    + "IMG_" + ".jpg");
+                    + "IMG_" + ".jpg" + ".jpeg");
         }  else {
             return null;
         }

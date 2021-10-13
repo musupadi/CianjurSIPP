@@ -61,6 +61,55 @@ public class DataModel {
     @Expose
     public String file_struktur_org_foto;
 
+    //Sumber Pustaka
+    @SerializedName("id_sumber_pustaka")
+    @Expose
+    public String id_sumber_pustaka;
+
+    @SerializedName("id_daerah")
+    @Expose
+    public String id_daerah;
+
+    @SerializedName("id_dinas_pendidikan")
+    @Expose
+    public String id_dinas_pendidikan;
+
+    @SerializedName("id_sumber_pustaka_penjurusan")
+    @Expose
+    public String id_sumber_pustaka_penjurusan;
+
+    @SerializedName("nama_penjurusan")
+    @Expose
+    public String nama_penjurusan;
+
+    @SerializedName("lembaga_sekolah")
+    @Expose
+    public String lembaga_sekolah;
+
+    @SerializedName("judul_sumber_pustaka")
+    @Expose
+    public String judul_sumber_pustaka;
+
+    @SerializedName("link_youtube_sumber_pustaka")
+    @Expose
+    public String link_youtube_sumber_pustaka;
+
+    @SerializedName("file_sumber_pustaka")
+    @Expose
+    public String file_sumber_pustaka;
+
+    @SerializedName("isi_sumber_pustaka")
+    @Expose
+    public String isi_sumber_pustaka;
+
+    @SerializedName("status_sumber_pustaka")
+    @Expose
+    public String status_sumber_pustaka;
+
+    @SerializedName("created_at_sumber_pustaka")
+    @Expose
+    public String created_at_sumber_pustaka;
+
 
     //Game
     @SerializedName("id_games_hewan")
@@ -153,9 +202,6 @@ public class DataModel {
     @Expose
     public String id_guru_ngaji;
 
-    @SerializedName("id_daerah")
-    @Expose
-    public String id_daerah;
 
     @SerializedName("nama_guru_ngaji")
     @Expose
@@ -2355,5 +2401,94 @@ public class DataModel {
 
     public void setFile_struktur_org_foto(String file_struktur_org_foto) {
         this.file_struktur_org_foto = file_struktur_org_foto;
+    }
+
+    public String getId_sumber_pustaka() {
+        return id_sumber_pustaka;
+    }
+
+    public void setId_sumber_pustaka(String id_sumber_pustaka) {
+        this.id_sumber_pustaka = id_sumber_pustaka;
+    }
+
+    public String getId_dinas_pendidikan() {
+        return id_dinas_pendidikan;
+    }
+
+    public void setId_dinas_pendidikan(String id_dinas_pendidikan) {
+        this.id_dinas_pendidikan = id_dinas_pendidikan;
+    }
+
+    public String getLembaga_sekolah() {
+        return lembaga_sekolah;
+    }
+
+    public void setLembaga_sekolah(String lembaga_sekolah) {
+        this.lembaga_sekolah = lembaga_sekolah;
+    }
+
+    public String getJudul_sumber_pustaka() {
+        return judul_sumber_pustaka;
+    }
+
+    public void setJudul_sumber_pustaka(String judul_sumber_pustaka) {
+        this.judul_sumber_pustaka = judul_sumber_pustaka;
+    }
+
+
+    public String getFile_sumber_pustaka() {
+        return file_sumber_pustaka;
+    }
+
+    public void setFile_sumber_pustaka(String file_sumber_pustaka) {
+        this.file_sumber_pustaka = file_sumber_pustaka;
+    }
+
+    public String getIsi_sumber_pustaka() {
+        return isi_sumber_pustaka;
+    }
+
+    public void setIsi_sumber_pustaka(String isi_sumber_pustaka) {
+        this.isi_sumber_pustaka = isi_sumber_pustaka;
+    }
+
+    public String getStatus_sumber_pustaka() {
+        return status_sumber_pustaka;
+    }
+
+    public void setStatus_sumber_pustaka(String status_sumber_pustaka) {
+        this.status_sumber_pustaka = status_sumber_pustaka;
+    }
+
+    public String getCreated_at_sumber_pustaka() {
+        return created_at_sumber_pustaka;
+    }
+
+    public void setCreated_at_sumber_pustaka(String created_at_sumber_pustaka) {
+        this.created_at_sumber_pustaka = created_at_sumber_pustaka;
+    }
+
+    public String getLink_youtube_sumber_pustaka() {
+        return link_youtube_sumber_pustaka;
+    }
+
+    public void setLink_youtube_sumber_pustaka(String link_youtube_sumber_pustaka) {
+        this.link_youtube_sumber_pustaka = link_youtube_sumber_pustaka;
+    }
+
+    public String getId_sumber_pustaka_penjurusan() {
+        return id_sumber_pustaka_penjurusan;
+    }
+
+    public void setId_sumber_pustaka_penjurusan(String id_sumber_pustaka_penjurusan) {
+        this.id_sumber_pustaka_penjurusan = id_sumber_pustaka_penjurusan;
+    }
+
+    public String getNama_penjurusan() {
+        return nama_penjurusan;
+    }
+
+    public void setNama_penjurusan(String nama_penjurusan) {
+        this.nama_penjurusan = nama_penjurusan;
     }
 }

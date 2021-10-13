@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
+import android.Manifest;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -56,6 +57,7 @@ import java.util.logging.Logger;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
+import pub.devrel.easypermissions.EasyPermissions;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -142,6 +144,11 @@ public class FormulirPPDBActivity extends AppCompatActivity implements DatePicke
     RelativeLayout Back;
 
     String ID;
+
+    private String[] galleryPermissions =
+            {Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.CAMERA};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -160,6 +167,12 @@ public class FormulirPPDBActivity extends AppCompatActivity implements DatePicke
                 Level = cursor.getString(4);
                 Photo = cursor.getString(5);
             }
+        }
+        if(EasyPermissions.hasPermissions(FormulirPPDBActivity.this, galleryPermissions)) {
+
+        }else{
+            EasyPermissions.requestPermissions(FormulirPPDBActivity.this, "Access for storage and Camera",
+                    101, galleryPermissions);
         }
         //
         form = findViewById(R.id.tvForm);

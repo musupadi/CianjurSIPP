@@ -35,6 +35,7 @@ import com.destiny.cianjursipp.Activity.HomeActivity;
 import com.destiny.cianjursipp.Activity.LoginActivity;
 import com.destiny.cianjursipp.Activity.MainActivity;
 import com.destiny.cianjursipp.Activity.menu.KabarSekolah.DetailKabarSekolahActivity;
+import com.destiny.cianjursipp.Activity.menu.ProfileSekolah.ProfileSekolahActivity;
 import com.destiny.cianjursipp.BuildConfig;
 import com.destiny.cianjursipp.Method.Destiny;
 import com.destiny.cianjursipp.Model.Pena.ResponseModel;
@@ -325,34 +326,65 @@ public class UserFragment extends Fragment {
             }
         });
     }
-    private void Logic(){
-        ApiRequest api = RetroServer.getClient().create(ApiRequest.class);
-        final Call<ResponseModel> login =api.login(Username,Password);
-        login.enqueue(new Callback<ResponseModel>() {
+    private void GetSekolah(){
+        ApiRequest api2 = RetroServer.getClient().create(ApiRequest.class);
+        Call<ResponseModel> Point = api2.ProfileSekolah(destiny.AUTH(Token));
+        Point.enqueue(new Callback<ResponseModel>() {
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
                 try {
                     if (response.body().getStatusCode().equals("000")){
+                        tingkatan.setText(response.body().getData().get(0).getNama_sekolah());
+
+                    }else if (response.body().getStatusCode().equals("001") || response.body().getStatusCode().equals("002")){
+
+                    }else{
+                        Toast.makeText(getActivity(), "Terjadi Kesalahan ", Toast.LENGTH_SHORT).show();
+                    }
+                }catch (Exception e){
+                    Log.i("Error : ",e.toString());
+                    Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_SHORT).show();
+                    dbHelper.Logout();
+                    Intent intent = new Intent(getActivity(), LoginActivity.class);
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                Toast.makeText(getActivity(), "Koneksi Gagal", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void Logic() {
+        ApiRequest api = RetroServer.getClient().create(ApiRequest.class);
+        final Call<ResponseModel> login = api.login(Username, Password);
+        login.enqueue(new Callback<ResponseModel>() {
+            @Override
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                try {
+                    if (response.body().getStatusCode().equals("000")) {
                         try {
                             nama.setText(response.body().getData().get(0).getName());
-                            tingkatan.setText(response.body().getData().get(0).getLembaga());
+                            tingkatan.setText(response.body().getData().get(0).getNama_sekolah());
                             telepon.setText(response.body().getData().get(0).getTelepon());
                             NISN.setText(Username);
                             NISN2.setText(Username);
-                            if (response.body().getData().get(0).getPhoto().equals("") || response.body().getData().get(0).getPhoto().isEmpty()){
+                            GetSekolah();
+                            if (response.body().getData().get(0).getPhoto().equals("") || response.body().getData().get(0).getPhoto().isEmpty()) {
                                 profile.setImageResource(R.drawable.childern);
-                            }else{
+                            } else {
                                 Glide.with(getActivity())
-                                        .load(destiny.BASE_URL()+response.body().getData().get(0).getPhoto())
+                                        .load(destiny.BASE_URL() + response.body().getData().get(0).getPhoto())
                                         .into(profile);
                             }
-                        }catch (Exception e){
+                        } catch (Exception e) {
 
                         }
-                    }else{
+                    } else {
                         Toast.makeText(getActivity(), response.body().getStatusMessage(), Toast.LENGTH_SHORT).show();
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
 
                 }
             }
@@ -360,7 +392,7 @@ public class UserFragment extends Fragment {
             @Override
             public void onFailure(Call<ResponseModel> call, Throwable t) {
                 Toast.makeText(getActivity(), "Koneksi Gagal", Toast.LENGTH_SHORT).show();
-                Log.i("Login Logic : ",t.toString());
+                Log.i("Login Logic : ", t.toString());
             }
         });
     }

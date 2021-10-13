@@ -91,6 +91,9 @@ public class SoalEssayActivity extends AppCompatActivity {
                         recyclerView.setLayoutManager(mManager);
                         mItems = response.body().getData().getSoal();
                         mAdapter = new AdapterSoalEssay(SoalEssayActivity.this,mItems,JAWABAN);
+                        recyclerView.setItemViewCacheSize(100);
+                        recyclerView.setDrawingCacheEnabled(true);
+                        recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
                         recyclerView.setAdapter(mAdapter);
                         mAdapter.notifyDataSetChanged();
                         Jawab.setOnClickListener(new View.OnClickListener() {

@@ -50,16 +50,15 @@ public class AdapterEskul extends RecyclerView.Adapter<AdapterEskul.HolderData> 
         db_helper = new DB_Helper(ctx);
         final Eskul dm = mList.get(posistion);
         holderData.Judul.setText(dm.getNama_ekskul());
-//        holderData.Deskripsi.setText(destiny.SmallDescription(dm.getIsi_kabar()));
-//        holderData.Tanggal.setText(dm.getCreated_at_kabar());
         Glide.with(ctx)
                 .load(destiny.BASE_URL()+dm.getCover_ekskul())
                 .into(holderData.Image);
+
         holderData.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(ctx, DetailEskulActivity.class);
-                db_helper.SaveEskul(String.valueOf(posistion));
+                db_helper.SaveEskul(String.valueOf(posistion),dm.getId_ekskul());
                 i.putExtra("ESKUL", dm.getNama_ekskul());
                 ctx.startActivity(i);
             }

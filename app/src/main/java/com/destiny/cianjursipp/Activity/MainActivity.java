@@ -1,16 +1,19 @@
 package com.destiny.cianjursipp.Activity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
 
 
+import com.destiny.cianjursipp.Method.AppOpenManager;
 import com.destiny.cianjursipp.Method.Destiny;
 import com.destiny.cianjursipp.R;
 import com.destiny.cianjursipp.SharedPreferance.DB_Helper;
@@ -20,10 +23,13 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.appopen.AppOpenAd;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,6 +38,10 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     private InterstitialAd mInterstitialAd;
     Destiny destiny;
+    private AppOpenAd appOpenAd = null;
+    private AppOpenAd.AppOpenAdLoadCallback loadCallback;
+    private static boolean isShowingAd = false;
+    private long loadTime = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,10 +80,85 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
     }
+    public void showAdIfAvailable() {
+        // Only show ad if there is not already an app open ad currently showing
+        // and an ad is available.
+        if (!isShowingAd && isAdAvailable()) {
+            FullScreenContentCallback fullScreenContentCallback =
+                    new FullScreenContentCallback() {
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            // Set the reference to null so isAdAvailable() returns false.
+                            appOpenAd = null;
+                            isShowingAd = false;
+                            Logic();
+                        }
 
+                        @Override
+                        public void onAdFailedToShowFullScreenContent(AdError adError) {
+                            Logic();
+                        }
+
+                        @Override
+                        public void onAdShowedFullScreenContent() {
+                            isShowingAd = true;
+                        }
+                    };
+
+            appOpenAd.setFullScreenContentCallback(fullScreenContentCallback);
+            appOpenAd.show(MainActivity.this);
+        } else {
+            fetchAd();
+        }
+    }
+    public boolean isAdAvailable() {
+        return appOpenAd != null;
+    }
+    public void fetchAd() {
+        // Have unused ad, no need to fetch another.
+        if (isAdAvailable()) {
+            return;
+        }
+
+        loadCallback =
+                new AppOpenAd.AppOpenAdLoadCallback() {
+                    /**
+                     * Called when an app open ad has loaded.
+                     *
+                     * @param ad the loaded app open ad.
+                     */
+                    @Override
+                    public void onAdLoaded(AppOpenAd ad) {
+                        appOpenAd = ad;
+                        loadTime = (new Date()).getTime();
+                        appOpenAd.show(MainActivity.this);
+                        Logic();
+                    }
+
+                    /**
+                     * Called when an app open ad has failed to load.
+                     *
+                     * @param loadAdError the error.
+                     */
+                    @Override
+                    public void onAdFailedToLoad(LoadAdError loadAdError) {
+                        // Handle the error.
+                        Log.d("AD ERROR : ",loadAdError.toString());
+                        Logic();
+                    }
+
+                };
+        AdRequest request = getAdRequest();
+        AppOpenAd.load(
+                MainActivity.this, destiny.BelajarOpening(), request,
+                AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT, loadCallback);
+    }
+    /** Creates and returns ad request. */
+    private AdRequest getAdRequest() {
+        return new AdRequest.Builder().build();
+    }
     private void AD(){
         AdRequest adRequest = new AdRequest.Builder().build();
-
         InterstitialAd.load(this,destiny.BelajarADIntersential(), adRequest, new InterstitialAdLoadCallback() {
             @Override
             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -111,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
                         // show it a second time.
                         mInterstitialAd = null;
                         Log.d("TAG", "The ad was shown.");
+//                        Logic();
                     }
                 });
             }
@@ -131,9 +217,13 @@ public class MainActivity extends AppCompatActivity {
         final DB_Helper dbHelper = new DB_Helper(MainActivity.this);
         Cursor cursor = dbHelper.checkUser();
         if (cursor.getCount()>0){
-            Intent intent = new Intent(MainActivity.this,HomeActivity.class);
-            startActivity(intent);
-            finish();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }, 0);
         }else{
             handler.postDelayed(new Runnable() {
                 public void run() {

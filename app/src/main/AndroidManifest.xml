@@ -20,21 +20,64 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/logo_sekolah"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@mipmap/belajar_logo_round"
+        android:roundIcon="@mipmap/logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.menu.MediaPembelajaran.NewMediaPembelajaranActivity"
+        <activity
+            android:name=".Activity.menu.Header.DetailInfoPublikActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.menu.SumberPustaka.LembagaSumberPustakaActivity"
+            android:label="Sumber Pustaka"
+            android:parentActivityName=".Activity.menu.SumberPustaka.NewSumberPustaka1Activity" />
+        <activity
+            android:name=".Activity.menu.TryOut.TryOutActivity"
+            android:label="Try Out"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.SumberPustaka.NewSumberPustaka3Activity"
+            android:label="Sumber Pustaka"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.SumberPustaka.NewSumberPustaka2Activity"
+            android:label="Sumber Pustaka"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.SumberPustaka.NewSumberPustaka1Activity"
+            android:label="Sumber Pustaka"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.SumberPustaka.DetailSumberPustakaActivity"
+            android:label="Sumber Pustaka"
+            android:parentActivityName=".Activity.menu.SumberPustaka.NewSumberPustaka1Activity" />
+        <activity
+            android:name=".Activity.menu.SumberPustaka.SumberPustakaActivity"
+            android:label="Sumber Pustaka"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.LiveStreaming.DetailLiveStreamingActivity"
+            android:label="Live Streaming"
+            android:parentActivityName=".Activity.menu.LiveStreaming.LiveStreamingActivity" />
+        <activity
+            android:name=".Activity.menu.LiveStreaming.LiveStreamingActivity"
+            android:label="Live Streaming"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.MediaPembelajaran.NewMediaPembelajaranActivity"
             android:label="Media Pembelajaran"
-            android:parentActivityName=".Activity.HomeActivity"/>
+            android:parentActivityName=".Activity.HomeActivity" />
         <activity
             android:name=".Activity.menu.Tugas.NewTugasActivity"
             android:label="Tugas"
             android:parentActivityName=".Activity.HomeActivity" />
-        <activity android:name=".Activity.menu.Prestasi.DetailPrestasiActivity" />
+        <activity
+            android:name=".Activity.menu.Prestasi.DetailPrestasiActivity"
+            android:label="Prestasi"
+            android:parentActivityName=".Activity.menu.Prestasi.PrestasiActivity" />
         <activity
             android:name=".Activity.Marketplace.InputProdukActivity"
             android:label="Input Produk"
@@ -81,7 +124,7 @@
             android:parentActivityName=".Activity.menu.Kebudayaan.SejarahSunda.SejarahSundaActivity" />
         <activity
             android:name=".Activity.menu.Kebudayaan.SejarahSunda.SejarahSundaActivity"
-            android:label="Giveaway"
+            android:label="Sejarah"
             android:parentActivityName=".Activity.HomeActivity" />
         <activity
             android:name=".Activity.menu.Kebudayaan.CeritaSunda.DetailCeritaSundaActivity"
@@ -109,7 +152,7 @@
             android:parentActivityName=".Activity.menu.MediaInformasi.Giveaway.GiveawayActivity" />
         <activity
             android:name=".Activity.menu.MediaInformasi.Giveaway.GiveawayActivity"
-            android:label="Giveawayr"
+            android:label="Giveaway"
             android:parentActivityName=".Activity.HomeActivity" />
         <activity
             android:name=".Activity.menu.MediaInformasi.EducationTalkshow.EducationTalkshowActivity"
@@ -314,11 +357,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        </activity> <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/belajar_ad"/>
+            android:value="@string/belajar_ad" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />

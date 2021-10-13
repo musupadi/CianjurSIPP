@@ -78,6 +78,12 @@ public interface ApiRequest {
                                 @Field("id_tugas") String id_tugas,
                                 @Query("jawaban[]") ArrayList<String> jawab);
 
+
+    @FormUrlEncoded
+    @POST("penulusurankelulusan")
+    Call<ResponseModel> PostPenelusuranLulusan(@Header("Authorization") String authHeader,
+                                @Field("isi") String isi);
+
     @FormUrlEncoded
     @POST("ujian")
     Call<ResponseModel> Ujian(@Header("Authorization") String authHeader,
@@ -123,6 +129,13 @@ public interface ApiRequest {
     @GET("ekskul?self=true")
     Call<ResponseData> EskulAll(@Header("Authorization") String authHeader);
 
+    @GET("ekskul_anggota")
+    Call<ResponseModel> AnggotaEskul(@Header("Authorization") String authHeader,
+                                    @Query("id_ekskul") String idEskul);
+
+    @GET("live_streaming")
+    Call<ResponseModel> LiveStreaming(@Header("Authorization") String authHeader);
+
     @GET("ekskul")
     Call<ResponseData> EskulAll(@Header("Authorization") String authHeader,
                                 @Query("id_eskul") String idEskul);
@@ -130,6 +143,24 @@ public interface ApiRequest {
     @GET("kelasmuridabsen")
     Call<ResponseData> SiswaKelas(@Header("Authorization") String authHeader,
                                 @Query("idkelas") String idkelas);
+
+    @GET("sumber_pustaka")
+    Call<ResponseModel> SumberPustaka(@Header("Authorization") String authHeader,
+                                      @Query("search") String search,
+                                      @Query("lembaga_sekolah") String lembaga_sekolah,
+                                      @Query("id_jurusan") String id_jurusan,
+                                      @Query("kelas_ke") String kelas_ke);
+    @GET("sumber_pustaka")
+    Call<ResponseModel> SumberPustaka(@Header("Authorization") String authHeader);
+
+    @GET("sumber_pustaka_kelas")
+    Call<ResponseModel> SumberPustakaKelas(@Header("Authorization") String authHeader);
+
+    @GET("sumber_pustaka_lembaga")
+    Call<ResponseModel> SumberPustakaLembaga(@Header("Authorization") String authHeader);
+
+    @GET("sumber_pustaka_jurusan")
+    Call<ResponseModel> SumberPustakaJurusan(@Header("Authorization") String authHeader);
 
     @GET("ekskul_self")
     Call<ResponseModel> EskulSelf(@Header("Authorization") String authHeader);
@@ -152,6 +183,8 @@ public interface ApiRequest {
 
     @GET("kelasabsen")
     Call<ResponseModel> KelasAbsen(@Header("Authorization") String authHeader);
+
+
 
     @GET("evadir")
     Call<ResponseModel> Evadir(@Header("Authorization") String authHeader);
@@ -266,6 +299,15 @@ public interface ApiRequest {
 
     @GET("banner")
     Call<ResponseModel> Banner();
+
+    @GET("info_publik")
+    Call<ResponseModel> InfoPublik();
+
+    @GET("daerah")
+    Call<ResponseModel> Daerah(@Header("Authorization") String authHeader);
+
+    @GET("penulusurankelulusan")
+    Call<ResponseModel> GetPenelusuranLulusan(@Header("Authorization") String authHeader);
 
     @Multipart
     @POST("izin")
@@ -566,11 +608,7 @@ public interface ApiRequest {
                              @Part("tgl_akhir") RequestBody tgl_akhir,
                              @Part MultipartBody.Part photo);
 
-    @GET("info_publik")
-    Call<ResponseModel> InfoPublik();
 
-    @GET("daerah")
-    Call<ResponseModel> Daerah(@Header("Authorization") String authHeader);
 
     //Quran API
     @GET("1.json")

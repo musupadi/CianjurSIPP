@@ -82,6 +82,7 @@ public class SoalPGActivity extends AppCompatActivity {
                 Photo = cursor.getString(5);
             }
         }
+        dbHelper.DeleteTugas();
     }
     private void GETDATA(){
         Intent intent = getIntent();
@@ -105,6 +106,9 @@ public class SoalPGActivity extends AppCompatActivity {
                         JawabSoal = dialog.findViewById(R.id.btnJawabSoal);
                         Tutup = dialog.findViewById(R.id.btnTutupSoal);
                         mManager = new GridLayoutManager(SoalPGActivity.this,1);
+                        recyclerView.setItemViewCacheSize(100);
+                        recyclerView.setDrawingCacheEnabled(true);
+                        recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
                         recyclerView.setLayoutManager(mManager);
                         mAdapter = new AdapterSoalPG(SoalPGActivity.this,Integer.parseInt(response.body().getData().get(0).jumlahsoal),JAWABAN);
                         recyclerView.setAdapter(mAdapter);

@@ -83,11 +83,29 @@ public class AdapterUjian extends RecyclerView.Adapter<AdapterUjian.HolderData> 
         }
         holderData.Nama.setText(dm.getNama_mapel());
         holderData.Tanggal.setText(dm.getNama_hari()+", "+destiny.MagicDateChange(dm.getTgl_ujian())+" - PKL. "+dm.getJam_mulai());
+        if (dm.getMulai_ujian().equals("close")){
+            holderData.card.setAlpha(0.3f);
+        }
         holderData.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Level.equals("siswa")){
-                    if (dm.getScore_tugas().equals("0")){
+                if (dm.getMulai_ujian().equals("close")){
+                    Toast.makeText(ctx, "Ujian Belum dimulai", Toast.LENGTH_SHORT).show();
+                }else{
+                    if (Level.equals("siswa")){
+                        if (dm.getScore_tugas().equals("0")){
+                            Intent i = new Intent(ctx, DetailUjianActivity.class);
+                            i.putExtra("ID", dm.getId_ujian());
+                            i.putExtra("ID_JADWAL", dm.getId_ujian_jadwal());
+                            i.putExtra("JUMLAH", dm.getJumlah_soal());
+                            i.putExtra("PDF", dm.getFile_ujian());
+                            i.putExtra("NAMA", dm.getNama_mapel());
+                            ctx.startActivity(i);
+                        }else{
+                            dialog.show();
+                            nilai.setText("Nilai Anda Adalah : "+dm.getScore_tugas());
+                        }
+                    }else{
                         Intent i = new Intent(ctx, DetailUjianActivity.class);
                         i.putExtra("ID", dm.getId_ujian());
                         i.putExtra("ID_JADWAL", dm.getId_ujian_jadwal());
@@ -95,19 +113,9 @@ public class AdapterUjian extends RecyclerView.Adapter<AdapterUjian.HolderData> 
                         i.putExtra("PDF", dm.getFile_ujian());
                         i.putExtra("NAMA", dm.getNama_mapel());
                         ctx.startActivity(i);
-                    }else{
-                        dialog.show();
-                        nilai.setText("Nilai Anda Adalah : "+dm.getScore_tugas());
                     }
-                }else{
-                    Intent i = new Intent(ctx, DetailUjianActivity.class);
-                    i.putExtra("ID", dm.getId_ujian());
-                    i.putExtra("ID_JADWAL", dm.getId_ujian_jadwal());
-                    i.putExtra("JUMLAH", dm.getJumlah_soal());
-                    i.putExtra("PDF", dm.getFile_ujian());
-                    i.putExtra("NAMA", dm.getNama_mapel());
-                    ctx.startActivity(i);
                 }
+                
             }
         });
         tutup.setOnClickListener(new View.OnClickListener() {

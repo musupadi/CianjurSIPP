@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -76,6 +77,9 @@ public class Ujian2Activity extends AppCompatActivity {
                     if (response.body().getStatusCode().equals("000")){
                         mItems=response.body().getData();
                         mAdapter = new AdapterUjian(Ujian2Activity.this,mItems);
+                        recycler.setItemViewCacheSize(100);
+                        recycler.setDrawingCacheEnabled(true);
+                        recycler.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
                         recycler.setAdapter(mAdapter);
                         mAdapter.notifyDataSetChanged();
                     }else if (response.body().getStatusCode().equals("001") || response.body().getStatusCode().equals("002")){
@@ -97,7 +101,7 @@ public class Ujian2Activity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseModel> call, Throwable t) {
-                Toast.makeText(Ujian2Activity.this, "Imam Kontol", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Ujian2Activity.this, "Koneksi Gagal", Toast.LENGTH_SHORT).show();
             }
         });
     }

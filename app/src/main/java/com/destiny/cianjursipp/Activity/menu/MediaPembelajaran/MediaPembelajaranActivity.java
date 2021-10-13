@@ -42,7 +42,6 @@ public class MediaPembelajaranActivity extends AppCompatActivity {
     TextView nama,kelas,nis;
     ImageView image;
     private List<DataModel> mItems = new ArrayList<>();
-    private List<SubTema> SubTema = new ArrayList<>();
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mManager;
     String ID,NAMA;

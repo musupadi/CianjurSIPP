@@ -41,7 +41,8 @@ public class HomeActivity extends AppCompatActivity {
     TextView THome,TIzin,TAbsen,TGames,TUser;
     ImageView IHome,IIzin,IAbsen,IGames,IUser;
     Fragment fragment;
-    private String[] galleryPermissions = {Manifest.permission.READ_EXTERNAL_STORAGE,
+    private String[] galleryPermissions =
+            {Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.CAMERA};
     DB_Helper dbHelper;

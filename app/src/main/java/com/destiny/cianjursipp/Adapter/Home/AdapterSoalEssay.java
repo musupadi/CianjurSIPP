@@ -1,6 +1,8 @@
 package com.destiny.cianjursipp.Adapter.Home;
 
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +59,23 @@ public class AdapterSoalEssay extends RecyclerView.Adapter<AdapterSoalEssay.Hold
                 JAWABAN.set(posistion,holderData.JawabanSoal.getText().toString());
                 holderData.Jawab.setBackgroundResource(R.drawable.round_green);
                 holderData.Jawab.setText("Jawaban Terkunci");
+            }
+        });
+        holderData.JawabanSoal.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                holderData.Jawab.setBackgroundResource(R.drawable.round_blue);
+                holderData.Jawab.setText("Kunci Jawaban");
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
         holderData.Soal.loadData(dm.getIsi_soal(),"text/html","UTF-8");

@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
+import com.destiny.cianjursipp.Activity.menu.KabarSekolah.DetailKabarSekolahActivity;
 import com.destiny.cianjursipp.Method.Destiny;
 import com.destiny.cianjursipp.Model.DataModel;
 import com.destiny.cianjursipp.R;
@@ -54,13 +55,13 @@ public class AdapterBanner extends PagerAdapter {
         Image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent i = new Intent(context, DetailInfoPublik.class);
-//                i.putExtra("JUDUL", dm.getJudul_info_publik());
-//                i.putExtra("ISI",dm.getIsi_info_publik());
-//                i.putExtra("TANGGAL",dm.getCreated_at_info_publik());
-//                i.putExtra("GAMBAR",destiny.BASE_URL()+dm.getCover_info_publik());
-//                i.putExtra("YOUTUBE",dm.getLink_youtube_info_publik() );
-//                context.startActivity(i);
+                Intent i = new Intent(context, DetailKabarSekolahActivity.class);
+                i.putExtra("JUDUL", dm.getJudul_info_publik());
+                i.putExtra("ISI",dm.getIsi_info_publik());
+                i.putExtra("TANGGAL",dm.getCreated_at_info_publik());
+                i.putExtra("GAMBAR",destiny.BASE_URL()+dm.getCover_info_publik());
+                i.putExtra("YOUTUBE",dm.getLink_youtube_info_publik() );
+                context.startActivity(i);
             }
         });
 //        TextView textGambar = view.findViewById(R.id.tvTextImage);

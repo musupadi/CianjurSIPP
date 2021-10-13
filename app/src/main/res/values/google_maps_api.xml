@@ -4,12 +4,12 @@
 
     To get one, follow this link, follow the directions and press "Create" at the end:
 
-    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=F0:8F:5D:6F:C7:40:3C:6C:E5:C4:3B:9D:E3:C0:88:4B:14:E4:5D:EB%3Bcom.destiny.puskomdik.Activity.menu.JumatNgaji.GuruNgaji
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=F0:8F:5D:6F:C7:40:3C:6C:E5:C4:3B:9D:E3:C0:88:4B:14:E4:5D:EB%3Bcom.destiny.cianjursipp.Activity.menu.JumatNgaji.GuruNgaji
 
     You can also add your credentials to an existing key, using these values:
 
     Package name:
-    com.destiny.puskomdik.Activity.menu.JumatNgaji.GuruNgaji
+    com.destiny.cianjursipp.Activity.menu.JumatNgaji.GuruNgaji
 
     SHA-1 certificate fingerprint:
     F0:8F:5D:6F:C7:40:3C:6C:E5:C4:3B:9D:E3:C0:88:4B:14:E4:5D:EB

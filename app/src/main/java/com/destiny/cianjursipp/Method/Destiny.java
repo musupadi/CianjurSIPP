@@ -32,7 +32,10 @@ import com.destiny.cianjursipp.Activity.menu.JadwalPelajaran.JadwalPelajaranActi
 import com.destiny.cianjursipp.Activity.menu.JumatNgaji.JumatNgajiActivity;
 import com.destiny.cianjursipp.Activity.menu.KabarSekolah.KabarSekolahActivity;
 import com.destiny.cianjursipp.Activity.menu.Kebudayaan.KebudayaanActivity;
+import com.destiny.cianjursipp.Activity.menu.LiveStreaming.LiveStreamingActivity;
 import com.destiny.cianjursipp.Activity.menu.LowonganKerja.LowonganKerjaActivity;
+import com.destiny.cianjursipp.Activity.menu.MediaInformasi.EducationTalkshow.EducationTalkshowActivity;
+import com.destiny.cianjursipp.Activity.menu.MediaInformasi.Giveaway.GiveawayActivity;
 import com.destiny.cianjursipp.Activity.menu.MediaInformasi.MediaInformasiActivity;
 import com.destiny.cianjursipp.Activity.menu.MediaPembelajaran.MediaPembelajaranActivity;
 import com.destiny.cianjursipp.Activity.menu.MediaPembelajaran.NewMediaPembelajaranActivity;
@@ -41,7 +44,10 @@ import com.destiny.cianjursipp.Activity.menu.Pembayaran.PembayaranActivity;
 import com.destiny.cianjursipp.Activity.menu.Prestasi.PrestasiActivity;
 import com.destiny.cianjursipp.Activity.menu.ProfileSekolah.ProfileSekolahActivity;
 import com.destiny.cianjursipp.Activity.menu.StrukturOrganisasi.StrukturOrganisasiActivity;
+import com.destiny.cianjursipp.Activity.menu.SumberPustaka.NewSumberPustaka1Activity;
+import com.destiny.cianjursipp.Activity.menu.SumberPustaka.SumberPustakaActivity;
 import com.destiny.cianjursipp.Activity.menu.Teman.TemanActivity;
+import com.destiny.cianjursipp.Activity.menu.TryOut.TryOutActivity;
 import com.destiny.cianjursipp.Activity.menu.Tugas.NewTugasActivity;
 import com.destiny.cianjursipp.Activity.menu.Tugas.TugasActivity;
 import com.destiny.cianjursipp.Activity.menu.Ujian.UjianActivity;
@@ -82,12 +88,21 @@ public class Destiny {
         return AD;
     }
     public String BelajarADIntersential(){
-        String AD = "ca-app-pub-3874394648867984/8806135403";
+        String AD = "ca-app-pub-2167245957396419/6476945372";
         return AD;
     }
 
     public String DestinyADIntersential(){
         String AD = "ca-app-pub-1910572986729903/8952764621";
+        return AD;
+    }
+
+    public String DefaultADOpening(){
+        String AD = "ca-app-pub-3940256099942544/3419835294";
+        return AD;
+    }
+    public String BelajarOpening(){
+        String AD = "ca-app-pub-4956475896423805/1042402868";
         return AD;
     }
 
@@ -494,6 +509,26 @@ public class Destiny {
             ctx.startActivity(intent);
         }else if(Class.equals("Teman")){
             Intent intent = new Intent(ctx, TemanActivity.class);
+            ctx.startActivity(intent);
+        }else if(Class.equals("Live Streaming")){
+            Intent intent = new Intent(ctx, LiveStreamingActivity.class);
+            ctx.startActivity(intent);
+        }else if(Class.equals("Perpustakaan Online")){
+            try {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.perpusnas.go.id/directory.php?lang=id&id=Perpustakaan%20Online"));
+                ctx.startActivity(browserIntent);
+            }catch (Exception e){
+                try {
+                    Toast.makeText(ctx, "Link Tidak Valid", Toast.LENGTH_SHORT).show();
+                }catch (Exception ex){
+
+                }
+            }
+        }else if (Class.equals("Sumber Pustaka")){
+            Intent intent = new Intent(ctx, NewSumberPustaka1Activity.class);
+            ctx.startActivity(intent);
+        }else if (Class.equals("Try Out")){
+            Intent intent = new Intent(ctx, TryOutActivity.class);
             ctx.startActivity(intent);
         }
     }

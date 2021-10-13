@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -126,6 +127,9 @@ public class NewTugasActivity extends AppCompatActivity {
                     if (response.body().getStatusCode().equals("000")){
                         mItems=response.body().getData();
                         mAdapter = new AdapterMapel(NewTugasActivity.this,mItems,"TUGAS");
+                        recycler.setItemViewCacheSize(100);
+                        recycler.setDrawingCacheEnabled(true);
+                        recycler.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
                         recycler.setAdapter(mAdapter);
                         mAdapter.notifyDataSetChanged();
                     }else{
