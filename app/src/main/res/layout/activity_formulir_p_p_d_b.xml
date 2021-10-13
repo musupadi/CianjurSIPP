@@ -1,0 +1,1357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.00000001dp"
+        android:text="1"
+        android:textSize="0.0000000001dp"
+        android:id="@+id/tvIdTahunAjaran"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/tk"
+                                android:id="@+id/ivLogoSekolah"/>
+
+                            <TextView
+                                android:id="@+id/tvForm"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center"
+                                android:text="Formulir Pendaftaran\nPenerimaan Peserta Didik baru\nTK Explorer\nTahun Pelajaran 2020/2021"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/round_orange"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_weight="4"
+                                    android:src="@drawable/user" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center|left"
+                                    android:text="Data Peserta Didik"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/text_titid_akram"
+                                    android:textColor="@color/colorWhite" />
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Tahun Ajaran"
+                                android:textColor="@color/colorBlack" />
+                            <Spinner
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/spAjaran"
+                                android:entries="@array/SuratPendidikan"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Nomor Ujian"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:inputType="number"
+                                    android:id="@+id/etNomorUjian"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="NISN *"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:inputType="number"
+                                    android:id="@+id/etNISN"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="NIK"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:inputType="number"
+                                    android:id="@+id/etNIK"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Nama Lengkap Siswa*"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etNamaLengkapSiswa"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Agama*"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etAgama"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Nomor Telepon"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:inputType="number"
+                                    android:id="@+id/etNomorTelpon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Email*"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:inputType="textEmailAddress"
+                                    android:id="@+id/etEmail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Jenis Kelamin"
+                                android:textColor="@color/colorBlack" />
+
+                            <RadioGroup
+                                android:id="@+id/radGroupKelamin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:theme="@style/AppTheme">
+
+                                <RadioButton
+                                    android:id="@+id/radioLakilaki"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Laki-laki" />
+
+                                <RadioButton
+                                    android:id="@+id/radioPerempuan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Perempuan" />
+                            </RadioGroup>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Kebutuhan Khusus"
+                                android:textColor="@color/colorBlack" />
+                            <Spinner
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/spKebutuhanKhusus"
+                                android:entries="@array/KebutuhanKhusus"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Alamat"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etAlamat"
+                                    android:inputType="textMultiLine"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="RT*"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etRt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="RW*"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etRw"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Kecamatan*"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etKecematan"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Tempat Lahir"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etTempatLahir"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Tanggal Lahir"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <LinearLayout
+                                    android:id="@+id/linearTanggalLahir"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tvTanggalLahir"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto"
+                                        android:padding="5dp"
+                                        android:text="21 April 2020"
+                                        android:textColor="@color/colorBlack" />
+
+                                    <ImageView
+                                        android:id="@+id/ivDariTanggal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="30dp"
+                                        android:layout_gravity="right"
+                                        android:layout_weight="5"
+                                        android:foregroundGravity="right"
+                                        android:src="@drawable/calendar" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Sekolah Asal"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:inputType="text"
+                                    android:id="@+id/etSekolahAsal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Anak Keberapa"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:inputType="number"
+                                    android:id="@+id/etAnakKeberapa"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Berat Badan"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:inputType="number"
+                                    android:id="@+id/etBeratBadan"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Tinggi Badan"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:inputType="number"
+                                    android:id="@+id/etTinggiBadan"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Lingkar Kepala"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:inputType="number"
+                                    android:id="@+id/etLingkarKepala"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Jumlah Saudara Kandung"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:inputType="number"
+                                    android:id="@+id/etJumlahSaudaraKandung"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Jarak rumah ke Sekolah"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:inputType="number"
+                                    android:id="@+id/etJarakRumahKeSekolah"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="*) Wajib Diisi"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:background="@drawable/round_orange"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_weight="4"
+                                    android:src="@drawable/user" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center|left"
+                                    android:text="Data Orang Tua"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/text_titid_akram"
+                                    android:textColor="@color/colorWhite" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Nama Ayah Kandung"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etNamaAyahKandung"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Tahun Lahir Ayah*"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <LinearLayout
+                                    android:id="@+id/linearTanggalLahirAyah"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tvTanggalLahirAyah"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto"
+                                        android:padding="5dp"
+                                        android:text="21 April 2020"
+                                        android:textColor="@color/colorBlack" />
+
+                                    <ImageView
+                                        android:id="@+id/ivDariTanggalAyah"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="30dp"
+                                        android:layout_gravity="right"
+                                        android:layout_weight="5"
+                                        android:foregroundGravity="right"
+                                        android:src="@drawable/calendar" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Pendidikan Ayah"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etPendidikanAyah"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Pekerjaan Ayah"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etPekerjaanAyah"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Penghasilan Ayah"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etPenghasilanAyah"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="NIK Ayah"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etNikAyah"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Nama Ibu Kandung"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etNamaIbuKandung"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Tahun Lahir Ibu*"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <LinearLayout
+                                    android:id="@+id/linearTanggalLahirIbu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tvTanggalLahirIbu"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto"
+                                        android:padding="5dp"
+                                        android:text="21 April 2020"
+                                        android:textColor="@color/colorBlack" />
+
+                                    <ImageView
+                                        android:id="@+id/ivDariTanggalIbu"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="30dp"
+                                        android:layout_gravity="right"
+                                        android:layout_weight="5"
+                                        android:foregroundGravity="right"
+                                        android:src="@drawable/calendar" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Pendidikan Ibu"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etPendidikanIbu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Pekerjaan Ibu"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etPekerjaanIbu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Penghasilan Ibu"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etPenghasilanIbu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="NIK Ibu"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:id="@+id/etNikIbu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="No.Tlp/HP/Whatsapp Orang Tua/Wali"
+                                android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:padding="1dp">
+
+                                <EditText
+                                    android:inputType="number"
+                                    android:id="@+id/etNoTelponOrtu"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_rounded"
+                                    android:padding="5dp"
+                                    android:theme="@style/AppThemeDeskripsi" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:background="@drawable/round_orange"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_weight="4"
+                                    android:src="@drawable/user" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center|left"
+                                    android:text="Persyaratan"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/text_titid_akram"
+                                    android:textColor="@color/colorWhite" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Akta Kelahiran Fotocopy"
+                                android:textColor="@color/colorBlack" />
+
+                            <RadioGroup
+                                android:id="@+id/radGroupAktaKelahiran"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/radioAdaAkta"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Ada" />
+
+                                <RadioButton
+                                    android:id="@+id/radioTidakAdaAkta"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Tidak Ada" />
+                            </RadioGroup>
+
+                            <ImageView
+                                android:id="@+id/ivAkta"
+                                android:layout_width="match_parent"
+                                android:layout_height="300dp"
+                                android:visibility="gone" />
+
+                            <Button
+                                android:id="@+id/btnUploadAkta"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="50dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="50dp"
+                                android:layout_marginBottom="20dp"
+                                android:background="@drawable/btn_round_primary"
+                                android:text="Upload"
+                                android:textColor="@color/colorWhite" />
+
+                            <LinearLayout
+                                android:id="@+id/linearGambarAkta"
+                                android:layout_width="match_parent"
+                                android:layout_height="300dp"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:orientation="vertical"
+                                android:padding="1dp"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/btn_rounded"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <ImageView
+                                        android:id="@+id/ivGambarAkta"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/logo_bogor" />
+
+                                    <TextView
+                                        android:id="@+id/tvGambarAkta"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_weight="5"
+                                        android:gravity="center|top"
+                                        android:text="File Kosong Harap Pilih Gambar" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Kartu Keluarga Fotocopy"
+                                android:textColor="@color/colorBlack" />
+
+                            <RadioGroup
+                                android:id="@+id/radGroupKartuKeluarga"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/radioAdaKK"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Ada" />
+
+                                <RadioButton
+                                    android:id="@+id/radioTidakAdaKK"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Tidak Ada" />
+                            </RadioGroup>
+
+                            <Button
+                                android:id="@+id/btnUploadKK"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="50dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="50dp"
+                                android:layout_marginBottom="20dp"
+                                android:background="@drawable/btn_round_primary"
+                                android:text="Upload"
+                                android:textColor="@color/colorWhite" />
+
+                            <LinearLayout
+                                android:id="@+id/linearGambarKK"
+                                android:layout_width="match_parent"
+                                android:layout_height="300dp"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:orientation="vertical"
+                                android:padding="1dp"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/btn_rounded"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <ImageView
+                                        android:id="@+id/ivGambarKK"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/logo_bogor" />
+
+                                    <TextView
+                                        android:id="@+id/tvGambarKK"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_weight="5"
+                                        android:gravity="center|top"
+                                        android:text="File Kosong Harap Pilih Gambar" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Mengisi Data Pribadi Siswa"
+                                android:textColor="@color/colorBlack" />
+
+                            <RadioGroup
+                                android:id="@+id/radGroupDataPribadiSiswa"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/radioAdaDataPribadi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Ada" />
+
+                                <RadioButton
+                                    android:id="@+id/radioTidakAdaDataPribadi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Tidak Ada" />
+                            </RadioGroup>
+
+                            <Button
+                                android:id="@+id/btnUploadDataPribadi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="50dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="50dp"
+                                android:layout_marginBottom="20dp"
+                                android:background="@drawable/btn_round_primary"
+                                android:text="Upload"
+                                android:textColor="@color/colorWhite" />
+
+                            <LinearLayout
+                                android:id="@+id/linearGambarDataPribadi"
+                                android:layout_width="match_parent"
+                                android:layout_height="300dp"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:orientation="vertical"
+                                android:padding="1dp"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/btn_rounded"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <ImageView
+                                        android:id="@+id/ivGambarDataPribadi"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/logo_bogor" />
+
+                                    <TextView
+                                        android:id="@+id/tvGambarDataPribadi"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_weight="5"
+                                        android:gravity="center|top"
+                                        android:text="File Kosong Harap Pilih Gambar" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Pas Foto Ukuran 3X4"
+                                android:textColor="@color/colorBlack" />
+
+                            <RadioGroup
+                                android:id="@+id/radGroupFoto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/radioAdaFoto"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Ada" />
+
+                                <RadioButton
+                                    android:id="@+id/radioTidakAdaFoto"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Tidak Ada" />
+                            </RadioGroup>
+
+                            <Button
+                                android:id="@+id/btnUploadFoto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="50dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="50dp"
+                                android:layout_marginBottom="20dp"
+                                android:background="@drawable/btn_round_primary"
+                                android:text="Upload"
+                                android:textColor="@color/colorWhite"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/linearGambarFoto"
+                                android:layout_width="match_parent"
+                                android:layout_height="300dp"
+                                android:background="@drawable/btn_rounded_transparent"
+                                android:orientation="vertical"
+                                android:padding="1dp"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/btn_rounded"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <ImageView
+                                        android:id="@+id/ivGambarFoto"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/logo_bogor" />
+
+                                    <TextView
+                                        android:id="@+id/tvGambarFoto"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_weight="5"
+                                        android:gravity="center|top"
+                                        android:text="File Kosong Harap Pilih Gambar" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="2">
+
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:orientation="horizontal">
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="5dp"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/btn_round_primary"
+                                            android:padding="1dp">
+
+                                            <Button
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:background="@drawable/btn_rounded_white"
+                                                android:text="Batal"
+                                                android:textColor="@color/colorBlack" />
+                                        </LinearLayout>
+
+                                        <Button
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="5dp"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/btn_round_primary"
+                                            android:text="Simpan"
+                                            android:id="@+id/btnSimpan"
+                                            android:textColor="@color/colorWhite" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+</RelativeLayout>

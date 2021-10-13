@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Cianjur SIPP</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="periode_tugas">Periode Tugas Belum Dimulai atau Sudah Selesai</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="alamat_sekolah">Jln Darul Qur\'an Jln.Sindang Barang Pengkolan,RT.03/RW02,LOJI,Kec.Bogor.,Kota Bogor Jawa Barat 16117</string>
+    <string name="nomor_telpon">082762628987</string>
+    <string name="rekening_sekolah">9867655545897</string>
+    <string name="nama_bank">BCA</string>
+    <string name="nama_pemegang_bank">Anindita</string>
+    <string name="nama_yayasan">-</string>
+    <string name="nisnnpsn">-</string>
+    <string name="tahun_operasi">-</string>
+    <string name="status_sekolah">-</string>
+    <string name="sk_kelambangan">-</string>
+    <string name="tahun_didirikan">2015</string>
+    <string name="status_tanah">-</string>
+    <string name="luas_tanah">3000 Meter</string>
+    <string name="evadir">Pada menu ini, orang tua maupun siswa dapat memberikan penilaian terkait evaluasi pelayanan dan fasilitas di sekolah. Kirimkan kritik dan saran yang bersifat membangun ya agar bisa diperbaiki lebih baik lagi !</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="default_ad">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="belajar_ad">ca-app-pub-3874394648867984~3050126285</string>
+    <string name="destiny_ad">ca-app-pub-1910572986729903~9052836972</string>
+    <string-array name="Izin">
+        <item>Sakit Istirahat Dirumah</item>
+        <item>Izin Dengan Surat Dokter</item>
+        <item>Izin Istirahat Dirumah</item>
+        <item>Izin Dengan Alasan Lain</item>
+    </string-array>
+    <string-array name="SuratPendidikan">
+        <item>PDF</item>
+        <item>ARtikel</item>
+    </string-array>
+    <string-array name="KebutuhanKhusus">
+        <item>Tidak</item>
+        <item>Ya</item>
+    </string-array>
+    <string-array name="Language">
+        <item>Indonesia</item>
+        <item>Sunda</item>
+        <item>English</item>
+        <item>Arabic</item>
+        <item>Basque</item>
+        <item>Bengali</item>
+        <item>Portuguese</item>
+        <item>Bulgarian</item>
+        <item>Filipino</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Greek</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Kannada</item>
+        <item>Korean</item>
+        <item>Russian</item>
+        <item>Chinese</item>
+        <item>Spanish</item>
+        <item>Thai</item>
+        <item>Turkish</item>
+        <item>Ukrainian</item>
+        <item>Vietnamese</item>
+    </string-array>
+</resources>

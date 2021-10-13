@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/childern"
+        android:id="@+id/ivImage"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nama"
+        android:id="@+id/tvNama"
+        android:gravity="center"
+        android:textSize="@dimen/text_titid_baim"
+        android:textColor="@color/colorBlack"
+        android:fontFamily="@font/gotham"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sebutkan Nama Hewan Diatas"
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/gotham"
+                android:textSize="@dimen/text_titid_akram"
+                android:layout_marginBottom="5dp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tekan Untuk Berbicara"
+                android:id="@+id/btnSpeech"
+                android:background="@drawable/btn_round_orange"
+                android:textColor="@color/colorWhite"
+                android:layout_margin="5dp"/>
+            <TextView
+                android:visibility="gone"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jawaban"
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/gotham"
+                android:id="@+id/tvJawaban"
+                android:textSize="@dimen/text_titid_akram"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

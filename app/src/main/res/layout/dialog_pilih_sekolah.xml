@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:background="@drawable/btn_rounded_white"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <AutoCompleteTextView
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Cari Sekolah"
+                android:fontFamily="@font/roboto"
+                android:textSize="@dimen/text_xtra_large"
+                android:textColor="@color/colorBlack"
+                android:id="@+id/autoComplete"/>
+            <Button
+                android:layout_weight="2"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn_round_primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pilih"
+                android:id="@+id/btnSubmit"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/roboto"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pilih Lembaga"
+            android:textSize="@dimen/text_titid_imam"
+            android:layout_margin="5dp"
+            android:textColor="@color/colorBlack"
+            android:fontFamily="@font/roboto"/>
+        <Spinner
+            android:id="@+id/spLembaga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/lembaga"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:id="@+id/recycler"
+            android:layout_margin="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn_round_primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tutup"
+                android:id="@+id/btnCancel"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/roboto"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

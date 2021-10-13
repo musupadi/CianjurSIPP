@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:background="@drawable/btn_rounded_white_2"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nilai Anda Adalah : "
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_titid_akram"
+            android:fontFamily="@font/gotham"
+            android:id="@+id/tvNilai"/>
+
+        <Button
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_round_primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kembali"
+            android:id="@+id/btnClose"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/roboto"/>
+    </LinearLayout>
+
+</RelativeLayout>

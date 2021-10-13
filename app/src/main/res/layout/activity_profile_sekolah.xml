@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:src="@drawable/gradient_background">
+
+                    </ImageView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:src="@drawable/tk"
+                            android:id="@+id/ivLogo"/>
+                        <TextView
+                            android:id="@+id/tvNamaProfileSekolah"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Profil\nTK Explorer"
+                            android:gravity="center"
+                            android:textColor="@color/colorWhite"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/header_text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="250dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@drawable/round_header">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_margin="30dp">
+                            <!--Nama Sekolah-->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Nama Sekolah"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:id="@+id/tvNamaSekolah"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="TK Exploler"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/colorBlack"/>
+                            <!--Alamat Sekolah-->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Alamat Sekolah"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:id="@+id/tvAlamat"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/alamat_sekolah"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/colorBlack"/>
+                            <!--Akreditasi Sekolah-->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Akreditasi Sekolah"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:id="@+id/tvAkreditasi"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/colorBlack"/>
+                            <!--NPSN-->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="NPSN"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:id="@+id/tvNPSN"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/colorBlack"/>
+                            <!--NO Izin Sekolah-->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="NO Izin Sekolah"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:id="@+id/tvNoIzinSekolah"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/colorBlack"/>
+                            <!--Kepala Sekolah-->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Nama Kepala Sekolah"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:id="@+id/tvKepalaSekolah"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Muhammad Ibrahim Yahya"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/colorBlack"/>
+                            <!--Nama Yayasan-->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Nama Yayasan"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:id="@+id/tvYayasan"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/colorBlack"/>
+                            <!--Ketua Yayasan-->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Ketua Yayasan"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:id="@+id/tvKetuaYayasan"
+                                android:textSize="@dimen/text_xtra_large"
+                                android:fontFamily="@font/roboto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/colorBlack"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

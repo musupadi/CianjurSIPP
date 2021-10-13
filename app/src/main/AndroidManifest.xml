@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.destiny.cianjursipp">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/logo_sekolah"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/belajar_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.menu.MediaPembelajaran.NewMediaPembelajaranActivity"
+            android:label="Media Pembelajaran"
+            android:parentActivityName=".Activity.HomeActivity"/>
+        <activity
+            android:name=".Activity.menu.Tugas.NewTugasActivity"
+            android:label="Tugas"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity android:name=".Activity.menu.Prestasi.DetailPrestasiActivity" />
+        <activity
+            android:name=".Activity.Marketplace.InputProdukActivity"
+            android:label="Input Produk"
+            android:parentActivityName=".Activity.Marketplace.MarketplaceSiswaActivity" />
+        <activity
+            android:name=".Activity.Marketplace.MarketplaceSiswaActivity"
+            android:label="Marketplace Siswa"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.Sponsor.SponsorActivity"
+            android:label="Sponsor"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.Marketplace.MarketplaceActivity"
+            android:label="Marketplace"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.Berita.KabarBeritaActivity"
+            android:label="Kabar Berita"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.Marketplace.DetailProdukActivity"
+            android:label="Game Nama Hewan"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.Games.GameHewanActivity"
+            android:label="Game Nama Hewan"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.Games.HewanActivity"
+            android:label="Hewan"
+            android:parentActivityName=".Activity.Games.GameHewanActivity" />
+        <activity
+            android:name=".Activity.menu.Teman.TemanActivity"
+            android:label="Teman Sekelas"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.Kebudayaan.KamusBahasa.KamusBahasaActivity"
+            android:label="Kamus Bahasa"
+            android:parentActivityName=".Activity.menu.Kebudayaan.KebudayaanActivity" />
+        <activity
+            android:name=".Activity.menu.Kebudayaan.SejarahSunda.DetailSejarahSundaActivity"
+            android:label="Detail Sejarah Sunda"
+            android:parentActivityName=".Activity.menu.Kebudayaan.SejarahSunda.SejarahSundaActivity" />
+        <activity
+            android:name=".Activity.menu.Kebudayaan.SejarahSunda.SejarahSundaActivity"
+            android:label="Giveaway"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.Kebudayaan.CeritaSunda.DetailCeritaSundaActivity"
+            android:label="Detail cerita Sunda"
+            android:parentActivityName=".Activity.menu.Kebudayaan.CeritaSunda.CeritaSundaActivity" />
+        <activity
+            android:name=".Activity.menu.Kebudayaan.CeritaSunda.CeritaSundaActivity"
+            android:label="Cerita Sunda"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.Kebudayaan.KebudayaanActivity"
+            android:label="Kebudayaan"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.KabarSekolah.DetailKabarSekolahActivity"
+            android:label="Detail Kabar Sekolah"
+            android:parentActivityName=".Activity.menu.KabarSekolah.KabarSekolahActivity" />
+        <activity
+            android:name=".Activity.menu.KabarSekolah.KabarSekolahActivity"
+            android:label="Kabar Sekolah"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.MediaInformasi.Giveaway.DetailGiveawayActivity"
+            android:label="Detrail Giveaway"
+            android:parentActivityName=".Activity.menu.MediaInformasi.Giveaway.GiveawayActivity" />
+        <activity
+            android:name=".Activity.menu.MediaInformasi.Giveaway.GiveawayActivity"
+            android:label="Giveawayr"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.MediaInformasi.EducationTalkshow.EducationTalkshowActivity"
+            android:label="Education Talkshow"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.MediaInformasi.EducationTalkshow.DetailEducationTalkshowActivity"
+            android:label="Detail Education Talkshow"
+            android:parentActivityName=".Activity.menu.MediaInformasi.EducationTalkshow.EducationTalkshowActivity" />
+        <activity
+            android:name=".Activity.menu.MediaInformasi.EducationPodcast.DetailEducationPodcastActivity"
+            android:label="Detail Education Podcast"
+            android:parentActivityName=".Activity.menu.MediaInformasi.EducationPodcast.EducationPodcastActivity" />
+        <activity
+            android:name=".Activity.menu.MediaInformasi.EducationPodcast.EducationPodcastActivity"
+            android:label="Education Podcast"
+            android:parentActivityName=".Activity.menu.MediaInformasi.MediaInformasiActivity" />
+        <activity
+            android:name=".Activity.menu.MediaInformasi.EducationNews.DetailEducationNewsActivity"
+            android:label="Detail Education News"
+            android:parentActivityName=".Activity.menu.MediaInformasi.EducationNews.EducationNewsActivity" />
+        <activity
+            android:name=".Activity.menu.MediaInformasi.EducationNews.EducationNewsActivity"
+            android:label="Education News"
+            android:parentActivityName=".Activity.menu.MediaInformasi.MediaInformasiActivity" />
+        <activity
+            android:name=".Activity.menu.MediaInformasi.MediaInformasiActivity"
+            android:label="Media Informasi"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.JumatNgaji.KiblatActivity"
+            android:label="Kiblat"
+            android:parentActivityName=".Activity.menu.JumatNgaji.KiblatActivity" />
+        <activity
+            android:name=".Activity.menu.JumatNgaji.KhutbahJumat.DetailKhutbahActivity"
+            android:label="Detail Khutbah Jumat"
+            android:parentActivityName=".Activity.menu.JumatNgaji.KhutbahJumat.KhutbahJumatActivity" />
+        <activity
+            android:name=".Activity.menu.JumatNgaji.KhutbahJumat.KhutbahJumatActivity"
+            android:label="Khutbah Jumat"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.JumatNgaji.GuruNgaji.DetailGuruNgajiActivity"
+            android:label="Detail Guru Ngaji"
+            android:parentActivityName=".Activity.menu.JumatNgaji.GuruNgaji.GuruNgajiActivity" />
+        <activity
+            android:name=".Activity.menu.JumatNgaji.GuruNgaji.GuruNgajiActivity"
+            android:label="Guru Ngaji"
+            android:parentActivityName=".Activity.menu.JumatNgaji.JumatNgajiActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <activity
+            android:name=".Activity.menu.JumatNgaji.GuruNgaji.MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".Activity.menu.JumatNgaji.JumatNgajiActivity"
+            android:label="Jumat Nggaji"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.Ujian.PenilaianTengahSemesterActivity"
+            android:label="Penilaian Tengah Semester"
+            android:parentActivityName=".Activity.menu.Ujian.UjianActivity" />
+        <activity android:name=".Activity.Absensi.AbsensiKelasActivity" />
+        <activity
+            android:name=".Activity.menu.Sponsor.DetailSponsorActivity"
+            android:label="Detail Sponsor"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.Ujian.DetailUjianActivity"
+            android:label="Detail Ujian"
+            android:parentActivityName=".Activity.menu.Ujian.UjianActivity" />
+        <activity
+            android:name=".Activity.menu.Ujian.Ujian2Activity"
+            android:label="Ujian"
+            android:parentActivityName=".Activity.menu.Ujian.UjianActivity" />
+        <activity
+            android:name=".Activity.menu.Ujian.UjianActivity"
+            android:label="Ujian"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.Eskul.DetailEskulActivity"
+            android:label="Detail Eskul"
+            android:parentActivityName=".Activity.menu.Eskul.EskulActivity" />
+        <activity
+            android:name=".Activity.menu.Eskul.EskulActivity"
+            android:label="Eskul"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.LowonganKerja.LowonganKerjaActivity"
+            android:label="Lowongan Kerja"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.Tugas.UploadActivity"
+            android:label="Tugas"
+            android:parentActivityName=".Activity.menu.Tugas.NewTugasActivity" />
+        <activity
+            android:name=".Activity.menu.InfoDinas.DinasPendidikanActivity"
+            android:label="Dinas Pendidikan"
+            android:parentActivityName=".Activity.menu.InfoDinas.InfoDinasActivity" />
+        <activity
+            android:name=".Activity.menu.InfoDinas.InfoDinasActivity"
+            android:label="Info Dinas Pendikan"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.MediaPembelajaran.DetailMediaPembelajaranActivity"
+            android:label="Detail Media Pembelajaran"
+            android:parentActivityName=".Activity.menu.MediaPembelajaran.NewMediaPembelajaranActivity" />
+        <activity
+            android:name=".Activity.menu.MediaPembelajaran.ListMediaPembelajaranActivity"
+            android:label="Media"
+            android:parentActivityName=".Activity.menu.MediaPembelajaran.NewMediaPembelajaranActivity" />
+        <activity
+            android:name=".Activity.menu.MediaPembelajaran.MediaPembelajaranActivity"
+            android:label="Media Pembelajaran"
+            android:parentActivityName=".Activity.menu.MediaPembelajaran.NewMediaPembelajaranActivity" />
+        <activity
+            android:name=".Activity.menu.Evadir.EvadirActivity"
+            android:label="Evadir"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.Gallery.GalleryActivity"
+            android:label="Gallery"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.Pembayaran.PembayaranActivity"
+            android:label="Pembayaran"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.BiayaAkademik.BiayaAkademikActivity"
+            android:label="Biaya Akademik"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.Guru.GuruActivity"
+            android:label="Data Guru"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.ERaport.ERaportActivity"
+            android:label="E-Raport"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.Tugas.SoalPGActivity"
+            android:label="Soal PG"
+            android:parentActivityName=".Activity.menu.Tugas.NewTugasActivity" />
+        <activity
+            android:name=".Activity.menu.Tugas.SoalEssayActivity"
+            android:label="Soal Essay"
+            android:parentActivityName=".Activity.menu.Tugas.NewTugasActivity" />
+        <activity
+            android:name=".Activity.menu.Tugas.TugasActivity"
+            android:label="Upload Tugas"
+            android:parentActivityName=".Activity.menu.Tugas.NewTugasActivity" />
+        <activity android:name=".Activity.Absensi.InnerKelasAbsensiActivity" />
+        <activity
+            android:name=".Activity.menu.JadwalPelajaran.JadwalPelajaranActivity"
+            android:label="Jadwal pelajaran"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.StrukturOrganisasi.StrukturOrganisasiActivity"
+            android:label="Struktur Organisasi"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.PPDB.FormulirPPDBActivity"
+            android:label="Formulir PPDB"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.Prestasi.PrestasiActivity"
+            android:label="Prestasi"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.AgendaSekolah.DetailAgendaSekolahActivity"
+            android:label="Profil Sekolah"
+            android:parentActivityName=".Activity.menu.AgendaSekolah.AgendaSekolahActivity" />
+        <activity
+            android:name=".Activity.menu.AgendaSekolah.AgendaSekolahActivity"
+            android:label="Agenda Sekolah"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.menu.ProfileSekolah.ProfileSekolahActivity"
+            android:label="Profil Sekolah"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity android:name=".Splash.FullScreenYoutubeActivity" />
+        <activity
+            android:name=".Splash.SplashActivity"
+            android:theme="@style/AppThemeNoAction" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:theme="@style/AppThemeNoAction" />
+        <activity
+            android:name=".Activity.HomeActivity"
+            android:theme="@style/AppThemeNoAction" />
+        <activity
+            android:name=".Activity.MainActivity"
+            android:theme="@style/AppThemeNoAction">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/belajar_ad"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>
