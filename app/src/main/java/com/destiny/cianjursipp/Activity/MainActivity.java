@@ -13,7 +13,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 
-import com.destiny.cianjursipp.Method.AppOpenManager;
+
 import com.destiny.cianjursipp.Method.Destiny;
 import com.destiny.cianjursipp.R;
 import com.destiny.cianjursipp.SharedPreferance.DB_Helper;

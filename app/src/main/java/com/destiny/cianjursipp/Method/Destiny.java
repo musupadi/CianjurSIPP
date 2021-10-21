@@ -88,7 +88,7 @@ public class Destiny {
         return AD;
     }
     public String BelajarADIntersential(){
-        String AD = "ca-app-pub-2167245957396419/6476945372";
+        String AD = "ca-app-pub-2778923555987421/7313608229";
         return AD;
     }
 

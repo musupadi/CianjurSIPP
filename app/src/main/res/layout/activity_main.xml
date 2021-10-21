@@ -15,7 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/kontol_imam" />
+            android:src="@drawable/akram_kontol"
+            android:layout_margin="30dp"/>
 
         <ImageView
             android:layout_width="match_parent"
