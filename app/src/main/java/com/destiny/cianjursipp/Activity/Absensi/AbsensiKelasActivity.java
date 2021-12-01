@@ -79,7 +79,7 @@ public class AbsensiKelasActivity extends AppCompatActivity {
         PIKET = intent.getExtras().getString("PIKET");
         NAMA = intent.getExtras().getString("NAMA");
         getSupportActionBar().setTitle(NAMA);
-        Log.d("ID KELAS UCUP KONTOL : ",ID);
+        Log.d("ID KELAS UCUP zyarga : ",ID);
         Data();
         Kirim.setOnClickListener(new View.OnClickListener() {
             @Override

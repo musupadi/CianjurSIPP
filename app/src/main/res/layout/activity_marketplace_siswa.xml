@@ -18,7 +18,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_weight="2"
-                android:src="@drawable/kontol_imam"
+                android:src="@drawable/zyarga_imam"
                 android:id="@+id/ivSiswa"/>
             <LinearLayout
                 android:layout_width="match_parent"

@@ -127,7 +127,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:id="@+id/ivImage"
-                android:src="@drawable/akram_kontol"/>
+                android:src="@drawable/akram_zyarga"/>
         </LinearLayout>
     </RelativeLayout>
     <LinearLayout

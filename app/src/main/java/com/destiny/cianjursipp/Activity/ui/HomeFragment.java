@@ -30,7 +30,7 @@ import android.widget.Toast;
 import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.destiny.cianjursipp.API.ApiRequest;
-import com.destiny.cianjursipp.API.FajarKontol;
+import com.destiny.cianjursipp.API.Fajarzyarga;
 import com.destiny.cianjursipp.API.RetroServer;
 import com.destiny.cianjursipp.Activity.Berita.KabarBeritaActivity;
 import com.destiny.cianjursipp.Activity.LoginActivity;
@@ -515,7 +515,7 @@ public class HomeFragment extends Fragment {
         TAHeader.setVisibility(View.GONE);
         AHeader.setAnimation("loading.json");
         AHeader.playAnimation();
-        ApiRequest api = FajarKontol.getClient().create(ApiRequest.class);
+        ApiRequest api = Fajarzyarga.getClient().create(ApiRequest.class);
         Call<ResponseModel> KabarBerita = api.InfoPublik();
         KabarBerita.enqueue(new Callback<ResponseModel>() {
             @Override

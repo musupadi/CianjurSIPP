@@ -30,7 +30,7 @@ public class DetailSejarahSundaActivity extends AppCompatActivity {
     String JUDUL,ISI,TANGGAL,GANBAR,YOUTUBE;
     TextView tanggal;
     ImageView gambar;
-    YouTubePlayerView FajarKontol;
+    YouTubePlayerView Fajarzyarga;
     WebView Web;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,22 +69,22 @@ public class DetailSejarahSundaActivity extends AppCompatActivity {
         GANBAR = intent.getExtras().getString("GAMBAR");
         YOUTUBE = intent.getExtras().getString("YOUTUBE");
         getSupportActionBar().setTitle(JUDUL);
-        FajarKontol = findViewById(R.id.youtube);
-        getLifecycle().addObserver(FajarKontol);
+        Fajarzyarga = findViewById(R.id.youtube);
+        getLifecycle().addObserver(Fajarzyarga);
         if (YOUTUBE.isEmpty()){
             gambar.setVisibility(View.VISIBLE);
-            FajarKontol.setVisibility(View.GONE);
+            Fajarzyarga.setVisibility(View.GONE);
         }else{
-            FajarKontol.setVisibility(View.VISIBLE);
+            Fajarzyarga.setVisibility(View.VISIBLE);
             gambar.setVisibility(View.GONE);
-            FajarKontol.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+            Fajarzyarga.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
                 @Override
                 public void onReady(@NonNull YouTubePlayer youTubePlayer) {
                     String videoId = YOUTUBE;
                     youTubePlayer.loadVideo(videoId, 0);
                 }
             });
-//            FajarKontol.addFullScreenListener(new YouTubePlayerFullScreenListener() {
+//            Fajarzyarga.addFullScreenListener(new YouTubePlayerFullScreenListener() {
 //                @Override
 //                public void onYouTubePlayerEnterFullScreen() {
 //                    Intent i = new Intent(DetailCeritaSundaActivity.this, FullScreenYoutubeActivity.class);

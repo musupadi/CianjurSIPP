@@ -29,7 +29,7 @@ public class FullScreenYoutubeActivity extends AppCompatActivity {
     String JUDUL,ISI,TANGGAL,GANBAR,YOUTUBE;
     TextView tanggal;
     ImageView gambar;
-    YouTubePlayerView FajarKontol;
+    YouTubePlayerView Fajarzyarga;
     WebView Web;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,17 +58,17 @@ public class FullScreenYoutubeActivity extends AppCompatActivity {
     private void GETDATA(){
         Intent intent = getIntent();
         YOUTUBE = intent.getExtras().getString("YOUTUBE");
-        FajarKontol = findViewById(R.id.youtube);
-        getLifecycle().addObserver(FajarKontol);
-        FajarKontol.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+        Fajarzyarga = findViewById(R.id.youtube);
+        getLifecycle().addObserver(Fajarzyarga);
+        Fajarzyarga.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
             @Override
             public void onReady(@NonNull YouTubePlayer youTubePlayer) {
                 String videoId = YOUTUBE;
                 youTubePlayer.loadVideo(videoId, 0);
             }
         });
-        FajarKontol.enterFullScreen();
-        FajarKontol.addFullScreenListener(new YouTubePlayerFullScreenListener() {
+        Fajarzyarga.enterFullScreen();
+        Fajarzyarga.addFullScreenListener(new YouTubePlayerFullScreenListener() {
             @Override
             public void onYouTubePlayerEnterFullScreen() {
                 onBackPressed();

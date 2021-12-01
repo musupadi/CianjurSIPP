@@ -2038,28 +2038,28 @@ public class FormulirPPDBActivity extends AppCompatActivity implements DatePicke
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        String FajarKontol = "01";
-        String UcupKontol = "01";
+        String Fajarzyarga = "01";
+        String Ucupzyarga = "01";
         int m = month+1;
         if (m<10){
-            FajarKontol="0"+String.valueOf(month+1);
+            Fajarzyarga="0"+String.valueOf(month+1);
         }else{
-            FajarKontol=String.valueOf(month+1);
+            Fajarzyarga=String.valueOf(month+1);
         }
         if (dayOfMonth<10){
-            UcupKontol="0"+String.valueOf(dayOfMonth);
+            Ucupzyarga="0"+String.valueOf(dayOfMonth);
         }else{
-            UcupKontol=String.valueOf(dayOfMonth);
+            Ucupzyarga=String.valueOf(dayOfMonth);
         }
-        String date = year+"-"+FajarKontol+"-"+UcupKontol;
+        String date = year+"-"+Fajarzyarga+"-"+Ucupzyarga;
         if (Tanggals.equals("Anak")){
-            TanggalLahir.setText(destiny.DateChanges(String.valueOf(year),FajarKontol,UcupKontol));
+            TanggalLahir.setText(destiny.DateChanges(String.valueOf(year),Fajarzyarga,Ucupzyarga));
             tanggal = date;
         }else if (Tanggals.equals("Ibu")){
-            TanggalLahirIbu.setText(destiny.DateChanges(String.valueOf(year),FajarKontol,UcupKontol));
+            TanggalLahirIbu.setText(destiny.DateChanges(String.valueOf(year),Fajarzyarga,Ucupzyarga));
             tanggalIbu = date;
         }else if(Tanggals.equals("Ayah")){
-            TanggalLahirAyah.setText(destiny.DateChanges(String.valueOf(year),FajarKontol,UcupKontol));
+            TanggalLahirAyah.setText(destiny.DateChanges(String.valueOf(year),Fajarzyarga,Ucupzyarga));
             tanggalAyah = date;
         }
 

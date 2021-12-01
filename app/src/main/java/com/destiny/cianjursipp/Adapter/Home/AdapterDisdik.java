@@ -30,11 +30,11 @@ public class AdapterDisdik extends RecyclerView.Adapter<AdapterDisdik.HolderData
     Boolean onClick=false;
     RecyclerView recyclerView;
     Destiny destiny;
-    String KONTOL;
-    public AdapterDisdik(Context ctx, List<DataModel> mList,String KONTOL){
+    String zyarga;
+    public AdapterDisdik(Context ctx, List<DataModel> mList,String zyarga){
         this.ctx = ctx;
         this.mList = mList;
-        this.KONTOL = KONTOL;
+        this.zyarga = zyarga;
     }
 
     @NonNull
@@ -50,7 +50,7 @@ public class AdapterDisdik extends RecyclerView.Adapter<AdapterDisdik.HolderData
         holderData.card.setVisibility(View.GONE);
         destiny = new Destiny();
         final DataModel dm = mList.get(posistion);
-        if (KONTOL.equals("Surat PDF")){
+        if (zyarga.equals("Surat PDF")){
             holderData.card2.setVisibility(View.GONE);
             if (dm.getTipe_info().equals("dokumen")){
                 holderData.card.setVisibility(View.VISIBLE);

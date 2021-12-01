@@ -19,7 +19,7 @@
             android:layout_width="180dp"
             android:layout_height="180dp"
             android:layout_gravity="center"
-            android:src="@drawable/akram_kontol"
+            android:src="@drawable/akram_zyarga"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"/>
         <LinearLayout
@@ -31,7 +31,7 @@
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/kontol_imam"
+                android:src="@drawable/zyarga_imam"
                 android:scaleType="center"/>
         </LinearLayout>
         <TextView
@@ -54,7 +54,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NIK"
+            android:text="Username"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="5dp"

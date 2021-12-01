@@ -65,43 +65,43 @@ public class AdapterSoalPG extends RecyclerView.Adapter<AdapterSoalPG.HolderData
                 if (Jawaban.equals("a")){
                     DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
                     Clicked(holderData.A,"a",posistion);
-                    try {
-                        dbHelper.SaveJawaban(String.valueOf(POSITION),"a");
-                    }catch (Exception e){
-                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"a");
-                    }
+//                    try {
+//                        dbHelper.SaveJawaban(String.valueOf(POSITION),"a");
+//                    }catch (Exception e){
+//                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"a");
+//                    }
                 }else if (Jawaban.equals("b")){
                     DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
                     Clicked(holderData.B,"b",posistion);
-                    try {
-                        dbHelper.SaveJawaban(String.valueOf(POSITION),"b");
-                    }catch (Exception e){
-                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"b");
-                    }
+//                    try {
+//                        dbHelper.SaveJawaban(String.valueOf(POSITION),"b");
+//                    }catch (Exception e){
+//                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"b");
+//                    }
                 }else if (Jawaban.equals("c")){
                     DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
                     Clicked(holderData.C,"c",posistion);
-                    try {
-                        dbHelper.SaveJawaban(String.valueOf(POSITION),"c");
-                    }catch (Exception e){
-                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"c");
-                    }
+//                    try {
+//                        dbHelper.SaveJawaban(String.valueOf(POSITION),"c");
+//                    }catch (Exception e){
+//                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"c");
+//                    }
                 }else if (Jawaban.equals("d")){
                     DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
                     Clicked(holderData.D,"d",posistion);
-                    try {
-                        dbHelper.SaveJawaban(String.valueOf(POSITION),"d");
-                    }catch (Exception e){
-                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"d");
-                    }
+//                    try {
+//                        dbHelper.SaveJawaban(String.valueOf(POSITION),"d");
+//                    }catch (Exception e){
+//                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"d");
+//                    }
                 }else if (Jawaban.equals("e")){
                     DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
                     Clicked(holderData.E,"e",posistion);
-                    try {
-                        dbHelper.SaveJawaban(String.valueOf(POSITION),"e");
-                    }catch (Exception e){
-                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"e");
-                    }
+//                    try {
+//                        dbHelper.SaveJawaban(String.valueOf(POSITION),"e");
+//                    }catch (Exception e){
+//                        dbHelper.UpdateJawaban(String.valueOf(POSITION),"e");
+//                    }
                 }
             }else{
                 JAWABAN.add("");
@@ -116,7 +116,7 @@ public class AdapterSoalPG extends RecyclerView.Adapter<AdapterSoalPG.HolderData
                     public void onClick(View v) {
                         DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
                         Clicked(holderData.A,"a",posistion);
-                        dbHelper.SaveJawaban(String.valueOf(POSITION),"a");
+//                        dbHelper.SaveJawaban(String.valueOf(POSITION),"a");
                     }
                 });
                 holderData.B.setOnClickListener(new View.OnClickListener() {
@@ -124,7 +124,7 @@ public class AdapterSoalPG extends RecyclerView.Adapter<AdapterSoalPG.HolderData
                     public void onClick(View v) {
                         DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
                         Clicked(holderData.B,"b",posistion);
-                        dbHelper.SaveJawaban(String.valueOf(POSITION),"b");
+//                        dbHelper.SaveJawaban(String.valueOf(POSITION),"b");
                     }
                 });
                 holderData.C.setOnClickListener(new View.OnClickListener() {
@@ -132,7 +132,7 @@ public class AdapterSoalPG extends RecyclerView.Adapter<AdapterSoalPG.HolderData
                     public void onClick(View v) {
                         DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
                         Clicked(holderData.C,"c",posistion);
-                        dbHelper.SaveJawaban(String.valueOf(POSITION),"c");
+//                        dbHelper.SaveJawaban(String.valueOf(POSITION),"c");
                     }
                 });
                 holderData.D.setOnClickListener(new View.OnClickListener() {
@@ -140,7 +140,7 @@ public class AdapterSoalPG extends RecyclerView.Adapter<AdapterSoalPG.HolderData
                     public void onClick(View v) {
                         DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
                         Clicked(holderData.D,"d",posistion);
-                        dbHelper.SaveJawaban(String.valueOf(POSITION),"d");
+//                        dbHelper.SaveJawaban(String.valueOf(POSITION),"d");
                     }
                 });
                 holderData.E.setOnClickListener(new View.OnClickListener() {
@@ -148,7 +148,7 @@ public class AdapterSoalPG extends RecyclerView.Adapter<AdapterSoalPG.HolderData
                     public void onClick(View v) {
                         DEFAULT(holderData.A,holderData.B,holderData.C,holderData.D,holderData.E);
                         Clicked(holderData.E,"e",posistion);
-                        dbHelper.SaveJawaban(String.valueOf(POSITION),"e");
+//                        dbHelper.SaveJawaban(String.valueOf(POSITION),"e");
                     }
                 });
             }

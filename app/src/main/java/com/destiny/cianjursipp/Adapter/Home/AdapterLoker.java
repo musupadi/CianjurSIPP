@@ -68,7 +68,7 @@ public class AdapterLoker extends RecyclerView.Adapter<AdapterLoker.HolderData> 
         RequestOptions options = new RequestOptions()
                 .centerCrop()
                 .placeholder(R.mipmap.ic_launcher_round)
-                .error(R.drawable.kontol_imam);
+                .error(R.drawable.zyarga_imam);
         Glide.with(ctx)
                 .load(destiny.BASE_URL()+dm.getCover_loker())
                 .apply(options)

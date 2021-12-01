@@ -129,7 +129,7 @@ public class Destiny {
         String nilais = df.format(NILAI);
         return nilais;
     }
-    public void Baim_KONTOL(final Context ctx){
+    public void Baim_zyarga(final Context ctx){
         AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
 
         // Set a title for alert dialog

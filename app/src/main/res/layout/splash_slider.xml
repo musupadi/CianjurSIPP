@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.5"
-            android:src="@drawable/kontol_imam"
+            android:src="@drawable/zyarga_imam"
             android:layout_margin="10dp"/>
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/kontol_imam"
+                android:src="@drawable/zyarga_imam"
                 android:layout_margin="10dp"
                 android:id="@+id/ivImage"/>
             <TextView

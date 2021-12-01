@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DB_Helper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "puskomdik.db";
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 7;
     //Account
     public static final String TABLE_NAME_ACCOUNT = "account";
     public static final String COLUMN_USERNAME = "username";
@@ -29,6 +29,10 @@ public class DB_Helper extends SQLiteOpenHelper {
     public static final String TABLE_NAME_TUGAS = "tugas";
     public static final String COLUMN_NOMOR = "nomor";
     public static final String COLUMN_JAWABAN = "jawaban";
+
+    //ADS
+    public static final String TABLE_NAME_ADS = "ads";
+    public static final String COLUMN_COUNT = "count";
 
     public DB_Helper(Context context){super(
             context,DATABASE_NAME,null,DATABASE_VERSION);
@@ -53,6 +57,9 @@ public class DB_Helper extends SQLiteOpenHelper {
                 COLUMN_NOMOR+" TEXT NOT NULL, "+
                 COLUMN_JAWABAN+" TEXT NOT NULL);"
         );
+        db.execSQL("CREATE TABLE "+TABLE_NAME_ADS+" (" +
+                COLUMN_COUNT+" TEXT NOT NULL);"
+        );
     }
 
     @Override
@@ -63,6 +70,13 @@ public class DB_Helper extends SQLiteOpenHelper {
         this.onCreate(db);
     }
     //Save
+    public void SaveCountADS(String count){
+        SQLiteDatabase db =this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_COUNT, count);
+        db.insert(TABLE_NAME_ADS,null,values);
+        db.close();
+    }
     public void SaveUser(String username,String password,String name,String token,String level,String profile,String id_kelas){
         SQLiteDatabase db =this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -100,6 +114,12 @@ public class DB_Helper extends SQLiteOpenHelper {
         db.close();
     }
     //CHECKER
+    public Cursor checkADS(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query ="SELECT * FROM "+TABLE_NAME_ADS;
+        Cursor cursor = db.rawQuery(query,null);
+        return cursor;
+    }
     public Cursor checkUser(){
         SQLiteDatabase db = this.getWritableDatabase();
         String query ="SELECT * FROM "+TABLE_NAME_ACCOUNT;
@@ -130,6 +150,10 @@ public class DB_Helper extends SQLiteOpenHelper {
     public void DeleteTugas(){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM "+TABLE_NAME_TUGAS+"");
+    }
+    public void ResetADS(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM "+TABLE_NAME_ADS+"");
     }
 }
 

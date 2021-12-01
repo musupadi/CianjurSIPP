@@ -37,7 +37,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="180dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/kontol_imam"
+                            android:src="@drawable/zyarga_imam"
                             android:layout_margin="10dp"
                             android:id="@+id/ivFotoGuruNgaji"/>
                         <TextView

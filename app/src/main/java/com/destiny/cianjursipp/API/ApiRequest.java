@@ -584,7 +584,7 @@ public interface ApiRequest {
                              @Part MultipartBody.Part Foto3,
                              @Part MultipartBody.Part Foto4);
 
-    //FAJAR KONTOL
+    //FAJAR zyarga
     @FormUrlEncoded
     @POST("info_dinas")
     Call<ResponseModel> InfoDinas(@Field("id_daerah") String id_daerah,

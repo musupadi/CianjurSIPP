@@ -126,7 +126,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:id="@+id/ivImage"
-                android:src="@drawable/kontol_imam"/>
+                android:src="@drawable/zyarga_imam"/>
         </LinearLayout>
     </RelativeLayout>
     <LinearLayout

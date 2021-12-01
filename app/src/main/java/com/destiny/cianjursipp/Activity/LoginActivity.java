@@ -47,12 +47,12 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     EditText user,password;
     DB_Helper dbHelper;
-    TextView FajarKontol;
+    TextView Fajarzyarga;
     //Dialog
     Dialog dialog;
-    RecyclerView ImamKontol;
+    RecyclerView Imamzyarga;
     Spinner TitidUcupKecil;
-    Button FajarNangis,KontolFajar,Pilih;
+    Button FajarNangis,zyargaFajar,Pilih;
     private List<DataModel> mItems = new ArrayList<>();
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mManager;
@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
         login = findViewById(R.id.btnLogin);
         user = findViewById(R.id.etEmail);
         password = findViewById(R.id.etPassword);
-        FajarKontol = findViewById(R.id.tvTamu);
+        Fajarzyarga = findViewById(R.id.tvTamu);
         //Dialog
         dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialog_pilih_sekolah);
@@ -76,9 +76,9 @@ public class LoginActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawableResource(R.drawable.btn_rounded_white);
 
         dbHelper = new DB_Helper(LoginActivity.this);
-        ImamKontol = dialog.findViewById(R.id.recycler);
+        Imamzyarga = dialog.findViewById(R.id.recycler);
         TitidUcupKecil = dialog.findViewById(R.id.spLembaga);
-        KontolFajar = dialog.findViewById(R.id.btnCancel);
+        zyargaFajar = dialog.findViewById(R.id.btnCancel);
         Pilih = dialog.findViewById(R.id.btnSubmit);
         Search = dialog.findViewById(R.id.autoComplete);
         destiny = new Destiny();
@@ -88,13 +88,13 @@ public class LoginActivity extends AppCompatActivity {
                 Logic();
             }
         });
-        FajarKontol.setOnClickListener(new View.OnClickListener() {
+        Fajarzyarga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.show();
             }
         });
-        KontolFajar.setOnClickListener(new View.OnClickListener() {
+        zyargaFajar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.hide();
@@ -146,7 +146,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void GetData(String lembaga){
         mManager = new LinearLayoutManager(LoginActivity.this, LinearLayoutManager.VERTICAL,false);
-        ImamKontol.setLayoutManager(mManager);
+        Imamzyarga.setLayoutManager(mManager);
         ApiRequest api = RetroServer.getClient().create(ApiRequest.class);
         Call<ResponseModel> KabarBerita = api.SekolahGuest(lembaga,"");
         KabarBerita.enqueue(new Callback<ResponseModel>() {
@@ -156,7 +156,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (response.body().getStatusCode().equals("000")){
                         mItems=response.body().getData();
                         mAdapter = new AdapterSekolah(LoginActivity.this,mItems);
-                        ImamKontol.setAdapter(mAdapter);
+                        Imamzyarga.setAdapter(mAdapter);
                         mAdapter.notifyDataSetChanged();
                     }else{
                         Toast.makeText(LoginActivity.this, "Terjadi Kesalahan ", Toast.LENGTH_SHORT).show();
@@ -174,7 +174,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void GetDataByName(String nama){
         mManager = new LinearLayoutManager(LoginActivity.this, LinearLayoutManager.VERTICAL,false);
-        ImamKontol.setLayoutManager(mManager);
+        Imamzyarga.setLayoutManager(mManager);
         ApiRequest api = RetroServer.getClient().create(ApiRequest.class);
         Call<ResponseModel> KabarBerita = api.SekolahGuest("",nama);
         KabarBerita.enqueue(new Callback<ResponseModel>() {

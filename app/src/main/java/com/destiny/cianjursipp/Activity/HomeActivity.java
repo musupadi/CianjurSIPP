@@ -134,32 +134,32 @@ public class HomeActivity extends AppCompatActivity {
             EasyPermissions.requestPermissions(HomeActivity.this, "Access for storage",
                     101, galleryPermissions);
         }
-        ApiRequest api = DestinyServer.getClient().create(ApiRequest.class);
-        Call<ResponseDestiny> Check = api.Checkers("Basic YWRtaW46MTIzNA==",
-                "destinykitabelajarkey");
-        Check.enqueue(new Callback<ResponseDestiny>() {
-            @Override
-            public void onResponse(Call<ResponseDestiny> call, Response<ResponseDestiny> response) {
-                try {
-                    if (response.body().getData().equals("1")){
-
-                    }else{
-//                        DB_Helper db_helper = new DB_Helper(HomeActivity.this);
-////                        db_helper.Logout();
-//                        Toast.makeText(HomeActivity.this, "Terjadi Kesalahan", Toast.LENGTH_SHORT).show();
-//                        Intent intent = new Intent(HomeActivity.this,LoginActivity.class);
-//                        startActivity(intent);
-                    }
-                }catch (Exception e){
-//                    Toast.makeText(HomeActivity.this, "Terjadi Kesalahan", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseDestiny> call, Throwable t) {
-//                Toast.makeText(HomeActivity.this, "Koneksi Gagal", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        ApiRequest api = DestinyServer.getClient().create(ApiRequest.class);
+//        Call<ResponseDestiny> Check = api.Checkers("Basic YWRtaW46MTIzNA==",
+//                "destinykitabelajarkey");
+//        Check.enqueue(new Callback<ResponseDestiny>() {
+//            @Override
+//            public void onResponse(Call<ResponseDestiny> call, Response<ResponseDestiny> response) {
+//                try {
+//                    if (response.body().getData().equals("1")){
+//
+//                    }else{
+////                        DB_Helper db_helper = new DB_Helper(HomeActivity.this);
+//////                        db_helper.Logout();
+////                        Toast.makeText(HomeActivity.this, "Terjadi Kesalahan", Toast.LENGTH_SHORT).show();
+////                        Intent intent = new Intent(HomeActivity.this,LoginActivity.class);
+////                        startActivity(intent);
+//                    }
+//                }catch (Exception e){
+////                    Toast.makeText(HomeActivity.this, "Terjadi Kesalahan", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ResponseDestiny> call, Throwable t) {
+////                Toast.makeText(HomeActivity.this, "Koneksi Gagal", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
     private void Default(){
         IHome.setImageResource(R.drawable.home);
