@@ -102,6 +102,9 @@ public class DetailUjianActivity extends AppCompatActivity {
         JawabSoal = dialog.findViewById(R.id.btnJawabSoal);
         Tutup = dialog.findViewById(R.id.btnTutupSoal);
         mManager = new GridLayoutManager(DetailUjianActivity.this,1);
+        recyclerView.setItemViewCacheSize(100);
+        recyclerView.setDrawingCacheEnabled(true);
+        recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
         recyclerView.setLayoutManager(mManager);
         mAdapter = new AdapterSoalPG(DetailUjianActivity.this,Integer.parseInt(JUMLAH),JAWABAN);
         recyclerView.setAdapter(mAdapter);
@@ -144,7 +147,7 @@ public class DetailUjianActivity extends AppCompatActivity {
                     });
 
                     // Set the alert dialog no button click listener
-                    builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                    builder.setNegativeButton("zTidak", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // Do something when No button clicked
